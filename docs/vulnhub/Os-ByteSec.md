@@ -1,4 +1,4 @@
-# vulnhub靶机 Os-ByteSec
+# Os-ByteSec
 
 靶机地址[hackNos: Os-Bytesec ~ VulnHub](https://www.vulnhub.com/entry/hacknos-os-bytesec,393/)
 
@@ -6,7 +6,7 @@
 
 ## 靶机配置
 
-靶机网卡配置参考我之前的[vulnhub靶机 Os-hackNos-1_witwitwiter的博客-CSDN博客](https://blog.csdn.net/witwitwiter/article/details/119889384?spm=1001.2014.3001.5501)
+靶机网卡配置参考我之前的[Os-hackNos-1_witwitwiter的博客-CSDN博客](https://blog.csdn.net/witwitwiter/article/details/119889384?spm=1001.2014.3001.5501)
 
 ## 渗透测试
 
@@ -200,7 +200,7 @@ enum4linux complete on Sun Aug 29 20:11:41 2021
 
 使用默认参数直接跑```enum4linux 192.168.5.135```
 
-![image-20230628230305489](vulnhub靶机 Os-ByteSec.assets\image-20230628230305489.png)
+![image-20230628230305489](Os-ByteSec.assets\image-20230628230305489.png)
 
 得到sagar、blackjax、smb这三个用户
 
@@ -441,7 +441,7 @@ tcp6       0      0 :::80                   :::*                    LISTEN      
 
 使用```xxd /usr/bin/netscan```查看二进制文件，发现确实调用了netstat -natp。
 
-![image-20230628230353627](vulnhub靶机 Os-ByteSec.assets\image-20230628230353627.png)
+![image-20230628230353627](Os-ByteSec.assets\image-20230628230353627.png)
 
 那么尝试用这个命令进行提权，注意这里写入的文件是netstat而不是netscan
 

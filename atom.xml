@@ -46,39 +46,18 @@
   </entry>
   
   <entry>
-    <title>Havoc-Windows-Client</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/</id>
+    <title>Os-ByteSec</title>
+    <link href="https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/"/>
+    <id>https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T08:33:48.563Z</updated>
+    <updated>2023-10-21T09:09:42.637Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Havoc-win&quot;&gt;&lt;a href=&quot;#Havoc-win&quot; class=&quot;headerlink&quot; title=&quot;Havoc-win&quot;&gt;&lt;/a&gt;Havoc-win&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Os-hackNos-1</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/</id>
-    <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T09:19:54.750Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Os-hackNos-1&quot;&gt;&lt;a href=&quot;#Os-hackNos-1&quot; class=&quot;headerlink&quot; title=&quot;Os-hackNos-1&quot;&gt;&lt;/a&gt;Os-hackNos-1&lt;/h1&gt;&lt;p&gt;靶机下载 &lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;Os-ByteSec&quot;&gt;&lt;a href=&quot;#Os-ByteSec&quot; class=&quot;headerlink&quot; title=&quot;Os-ByteSec&quot;&gt;&lt;/a&gt;Os-ByteSec&lt;/h1&gt;&lt;p&gt;靶机地址&lt;a</summary>
         
       
     
@@ -96,18 +75,43 @@
   </entry>
   
   <entry>
-    <title>Os-ByteSec</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/</id>
+    <title>Havoc-Windows-Client</title>
+    <link href="https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/"/>
+    <id>https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T09:09:42.637Z</updated>
+    <updated>2023-10-21T10:43:27.071Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;h1 id=&quot;Os-ByteSec&quot;&gt;&lt;a href=&quot;#Os-ByteSec&quot; class=&quot;headerlink&quot; title=&quot;Os-ByteSec&quot;&gt;&lt;/a&gt;Os-ByteSec&lt;/h1&gt;&lt;p&gt;靶机地址&lt;a</summary>
+    <summary type="html">&lt;h1 id=&quot;Havoc-win&quot;&gt;&lt;a href=&quot;#Havoc-win&quot; class=&quot;headerlink&quot; title=&quot;Havoc-win&quot;&gt;&lt;/a&gt;Havoc-win&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://bilibiliganb.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="工具开发" scheme="https://bilibiliganb.github.io/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Os-hackNos-1</title>
+    <link href="https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/"/>
+    <id>https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/</id>
+    <published>2023-10-21T08:20:27.000Z</published>
+    <updated>2023-10-21T09:19:54.750Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Os-hackNos-1&quot;&gt;&lt;a href=&quot;#Os-hackNos-1&quot; class=&quot;headerlink&quot; title=&quot;Os-hackNos-1&quot;&gt;&lt;/a&gt;Os-hackNos-1&lt;/h1&gt;&lt;p&gt;靶机下载 &lt;a</summary>
         
       
     

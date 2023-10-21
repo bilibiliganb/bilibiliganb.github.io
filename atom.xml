@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Life lover</title>
-  <icon>https://bilibiliganb.github.io/project/icon.png</icon>
+  <icon>https://bilibiliganb.github.io/icon.png</icon>
   <subtitle>[object Object]</subtitle>
-  <link href="https://bilibiliganb.github.io/project/atom.xml" rel="self"/>
+  <link href="https://bilibiliganb.github.io/atom.xml" rel="self"/>
   
-  <link href="https://bilibiliganb.github.io/project/"/>
+  <link href="https://bilibiliganb.github.io/"/>
   <updated>2023-10-19T10:10:06.090Z</updated>
-  <id>https://bilibiliganb.github.io/project/</id>
+  <id>https://bilibiliganb.github.io/</id>
   
   <author>
     <name>bilibiliganb</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Os-ByteSec</title>
-    <link href="https://bilibiliganb.github.io/project/2023/10/19/Os-ByteSec/"/>
-    <id>https://bilibiliganb.github.io/project/2023/10/19/Os-ByteSec/</id>
+    <link href="https://bilibiliganb.github.io/2023/10/19/Os-ByteSec/"/>
+    <id>https://bilibiliganb.github.io/2023/10/19/Os-ByteSec/</id>
     <published>2023-10-19T10:10:06.000Z</published>
     <updated>2023-10-19T10:10:06.090Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Os-hackNos-1</title>
-    <link href="https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/"/>
-    <id>https://bilibiliganb.github.io/project/2023/10/19/Os-hackNos-1/</id>
+    <link href="https://bilibiliganb.github.io/2023/10/19/Os-hackNos-1/"/>
+    <id>https://bilibiliganb.github.io/2023/10/19/Os-hackNos-1/</id>
     <published>2023-10-19T10:10:06.000Z</published>
     <updated>2023-10-19T10:10:06.094Z</updated>
     
@@ -60,8 +60,8 @@
   
   <entry>
     <title>hello-world</title>
-    <link href="https://bilibiliganb.github.io/project/2023/10/19/hello-world/"/>
-    <id>https://bilibiliganb.github.io/project/2023/10/19/hello-world/</id>
+    <link href="https://bilibiliganb.github.io/2023/10/19/hello-world/"/>
+    <id>https://bilibiliganb.github.io/2023/10/19/hello-world/</id>
     <published>2023-10-19T10:10:06.000Z</published>
     <updated>2023-10-19T10:10:06.084Z</updated>
     
@@ -82,8 +82,8 @@
   
   <entry>
     <title>trollcave-v1-2</title>
-    <link href="https://bilibiliganb.github.io/project/2023/10/19/trollcave-v1-2/"/>
-    <id>https://bilibiliganb.github.io/project/2023/10/19/trollcave-v1-2/</id>
+    <link href="https://bilibiliganb.github.io/2023/10/19/trollcave-v1-2/"/>
+    <id>https://bilibiliganb.github.io/2023/10/19/trollcave-v1-2/</id>
     <published>2023-10-19T10:10:06.000Z</published>
     <updated>2023-10-19T10:10:06.102Z</updated>
     

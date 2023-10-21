@@ -1,7 +1,12 @@
 ---
 title: Os-ByteSec
-date: 2023-10-19 18:10:06
+date: 2023-10-21 16:20:27
+categories: 
+- Vulnhub
 tags:
+- 渗透测试
+- 提权
+- Linux
 ---
 # Os-ByteSec
 

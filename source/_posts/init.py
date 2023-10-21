@@ -8,7 +8,7 @@ def rename_file(file_path):
     file_name, file_ext = os.path.splitext(file_path)
 
     # 检查目标文件是否存在
-    if os.path.exists(file_path):
+    if os.path.exists(file_name):
         # 如果目标文件存在，删除或者重命名它
         # os.remove(file_path)  # 删除文件
         # 或者可以选择重命名文件
@@ -74,7 +74,8 @@ def add_content_to_files():
                 lines = f.readlines()
 
             # 判断文件开头是否已存在指定内容
-            if not lines or not lines[0].startswith('---\ntitle'):
+            if not lines or not lines[0].startswith('---'):
+                print(lines[0])
                 # 打开文件并读取全部内容
                 with open(file_path, 'r', encoding='utf-8') as f:
                     content = f.read()

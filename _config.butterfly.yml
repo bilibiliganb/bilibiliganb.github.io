@@ -34,7 +34,8 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://bilibiliganb.github.io/project
+url: https://bilibiliganb.github.io
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -127,7 +128,9 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repository: https://github.com/bilibiliganb/bilibiliganb.github.io
+  branch: main
 
 busuanzi:
   site_uv: true
@@ -179,9 +182,11 @@ menu:
   标签: /tags/ || fas fa-tags
   # 分類: /categories/ || fas fa-folder-open
   类别||fa fa-heartbeat:
-    靶場: /range/ || fa-music
-    工具: /tools/ || fa-tools
-    技能学习: /study/ || fa-study
+    Vulnhub: /categories/Vulnhub/
+    hack-the-box: /categories/hack-the-box/
+    vulfocus: /categories/vulfocus/
+    工具: /categories/tools/ 
+    技能学习: /categories/study/ 
   # 清單||fa fa-heartbeat:
   #   靶場: /range/ || fa-music
   #   工具: /tools/ || fa-tools

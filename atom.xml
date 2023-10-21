@@ -6,7 +6,7 @@
   <link href="https://bilibiliganb.github.io/atom.xml" rel="self"/>
   
   <link href="https://bilibiliganb.github.io/"/>
-  <updated>2023-10-21T08:33:48.569Z</updated>
+  <updated>2023-10-21T09:19:54.751Z</updated>
   <id>https://bilibiliganb.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://bilibiliganb.github.io/2023/10/21/ReconForce/"/>
     <id>https://bilibiliganb.github.io/2023/10/21/ReconForce/</id>
     <published>2023-10-21T08:33:48.000Z</published>
-    <updated>2023-10-21T08:33:48.569Z</updated>
+    <updated>2023-10-21T09:19:54.751Z</updated>
     
     
       
@@ -34,27 +34,14 @@
     
     
     
-    
-  </entry>
-  
-  <entry>
-    <title>Os-hackNos-1</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/</id>
-    <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T08:33:48.566Z</updated>
+    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Os-hackNos-1&quot;&gt;&lt;a href=&quot;#Os-hackNos-1&quot; class=&quot;headerlink&quot; title=&quot;Os-hackNos-1&quot;&gt;&lt;/a&gt;Os-hackNos-1&lt;/h1&gt;&lt;p&gt;靶机下载 &lt;a</summary>
-        
-      
+    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
+    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
     
-    
+    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -80,11 +67,40 @@
   </entry>
   
   <entry>
+    <title>Os-hackNos-1</title>
+    <link href="https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/"/>
+    <id>https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/</id>
+    <published>2023-10-21T08:20:27.000Z</published>
+    <updated>2023-10-21T09:19:54.750Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Os-hackNos-1&quot;&gt;&lt;a href=&quot;#Os-hackNos-1&quot; class=&quot;headerlink&quot; title=&quot;Os-hackNos-1&quot;&gt;&lt;/a&gt;Os-hackNos-1&lt;/h1&gt;&lt;p&gt;靶机下载 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    
+    
+    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    
+    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Os-ByteSec</title>
     <link href="https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/"/>
     <id>https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T08:33:48.565Z</updated>
+    <updated>2023-10-21T09:09:42.637Z</updated>
     
     
       
@@ -97,6 +113,14 @@
     
     
     
+    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    
+    
+    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    
+    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
     
   </entry>
   
@@ -105,7 +129,7 @@
     <link href="https://bilibiliganb.github.io/2023/10/21/trollcave-v1-2/"/>
     <id>https://bilibiliganb.github.io/2023/10/21/trollcave-v1-2/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-10-21T08:33:48.568Z</updated>
+    <updated>2023-10-21T09:09:31.103Z</updated>
     
     
       
@@ -118,6 +142,14 @@
     
     
     
+    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    
+    
+    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    
+    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
     
   </entry>
   

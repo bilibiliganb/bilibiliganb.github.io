@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>Life lover</title>
-  <icon>https://bilibiliganb.github.io/icon.png</icon>
+  <icon>https://loveforfight.love/icon.png</icon>
   <subtitle>[object Object]</subtitle>
-  <link href="https://bilibiliganb.github.io/atom.xml" rel="self"/>
+  <link href="https://loveforfight.love/atom.xml" rel="self"/>
   
-  <link href="https://bilibiliganb.github.io/"/>
+  <link href="https://loveforfight.love/"/>
   <updated>2023-11-13T14:34:24.326Z</updated>
-  <id>https://bilibiliganb.github.io/</id>
+  <id>https://loveforfight.love/</id>
   
   <author>
     <name>bilibiliganb</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>后渗透-清理痕迹</title>
-    <link href="https://bilibiliganb.github.io/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
-    <id>https://bilibiliganb.github.io/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/</id>
+    <link href="https://loveforfight.love/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
+    <id>https://loveforfight.love/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/</id>
     <published>2023-10-26T12:04:27.000Z</published>
     <updated>2023-11-13T14:34:24.326Z</updated>
     
@@ -28,27 +28,27 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;后渗透-清理痕迹&quot;&gt;&lt;a href=&quot;#后渗透-清理痕迹&quot; class=&quot;headerlink&quot; title=&quot;后渗透-清理痕迹&quot;&gt;&lt;/a&gt;后渗透-清理痕迹&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="攻防" scheme="https://bilibiliganb.github.io/categories/%E6%94%BB%E9%98%B2/"/>
+    <category term="攻防" scheme="https://loveforfight.love/categories/%E6%94%BB%E9%98%B2/"/>
     
     
-    <category term="清理痕迹" scheme="https://bilibiliganb.github.io/tags/%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
+    <category term="清理痕迹" scheme="https://loveforfight.love/tags/%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
     
-    <category term="渗透" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    <category term="渗透" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F/"/>
     
-    <category term="攻防" scheme="https://bilibiliganb.github.io/tags/%E6%94%BB%E9%98%B2/"/>
+    <category term="攻防" scheme="https://loveforfight.love/tags/%E6%94%BB%E9%98%B2/"/>
     
   </entry>
   
   <entry>
     <title>蓝牙工具</title>
-    <link href="https://bilibiliganb.github.io/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/"/>
-    <id>https://bilibiliganb.github.io/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/</id>
+    <link href="https://loveforfight.love/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/"/>
+    <id>https://loveforfight.love/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/</id>
     <published>2023-10-22T05:04:27.000Z</published>
     <updated>2023-11-13T14:34:24.326Z</updated>
     
@@ -57,25 +57,25 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;蓝牙工具&quot;&gt;&lt;a href=&quot;#蓝牙工具&quot; class=&quot;headerlink&quot; title=&quot;蓝牙工具&quot;&gt;&lt;/a&gt;蓝牙工具&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot;</summary>
         
       
     
     
     
-    <category term="工具" scheme="https://bilibiliganb.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://loveforfight.love/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="渗透" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F/"/>
+    <category term="渗透" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F/"/>
     
-    <category term="蓝牙" scheme="https://bilibiliganb.github.io/tags/%E8%93%9D%E7%89%99/"/>
+    <category term="蓝牙" scheme="https://loveforfight.love/tags/%E8%93%9D%E7%89%99/"/>
     
   </entry>
   
   <entry>
     <title>ReconForce</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/ReconForce/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/ReconForce/</id>
+    <link href="https://loveforfight.love/2023/10/21/ReconForce/"/>
+    <id>https://loveforfight.love/2023/10/21/ReconForce/</id>
     <published>2023-10-21T08:33:48.000Z</published>
     <updated>2023-11-13T14:34:24.291Z</updated>
     
@@ -84,27 +84,27 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;ReconForce&quot;&gt;&lt;a href=&quot;#ReconForce&quot; class=&quot;headerlink&quot; title=&quot;ReconForce&quot;&gt;&lt;/a&gt;ReconForce&lt;/h1&gt;&lt;p&gt;靶机地址&lt;a</summary>
         
       
     
     
     
-    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    <category term="Vulnhub" scheme="https://loveforfight.love/categories/Vulnhub/"/>
     
     
-    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    <category term="渗透测试" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    <category term="提权" scheme="https://loveforfight.love/tags/%E6%8F%90%E6%9D%83/"/>
     
-    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://loveforfight.love/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>Havoc-Windows-Client</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Havoc-Windows-Client/</id>
+    <link href="https://loveforfight.love/2023/10/21/Havoc-Windows-Client/"/>
+    <id>https://loveforfight.love/2023/10/21/Havoc-Windows-Client/</id>
     <published>2023-10-21T08:20:27.000Z</published>
     <updated>2023-11-13T14:34:24.266Z</updated>
     
@@ -113,52 +113,23 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Havoc-win&quot;&gt;&lt;a href=&quot;#Havoc-win&quot; class=&quot;headerlink&quot; title=&quot;Havoc-win&quot;&gt;&lt;/a&gt;Havoc-win&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
         
       
     
     
     
-    <category term="工具" scheme="https://bilibiliganb.github.io/categories/%E5%B7%A5%E5%85%B7/"/>
+    <category term="工具" scheme="https://loveforfight.love/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="工具开发" scheme="https://bilibiliganb.github.io/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Os-hackNos-1</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Os-hackNos-1/</id>
-    <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-11-13T14:34:24.274Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
-    
-    
-    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
-    
-    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
-    
-    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
+    <category term="工具开发" scheme="https://loveforfight.love/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
   <entry>
     <title>Os-ByteSec</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/Os-ByteSec/</id>
+    <link href="https://loveforfight.love/2023/10/21/Os-ByteSec/"/>
+    <id>https://loveforfight.love/2023/10/21/Os-ByteSec/</id>
     <published>2023-10-21T08:20:27.000Z</published>
     <updated>2023-11-13T14:34:24.272Z</updated>
     
@@ -167,27 +138,56 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;Os-ByteSec&quot;&gt;&lt;a href=&quot;#Os-ByteSec&quot; class=&quot;headerlink&quot; title=&quot;Os-ByteSec&quot;&gt;&lt;/a&gt;Os-ByteSec&lt;/h1&gt;&lt;p&gt;靶机地址&lt;a</summary>
         
       
     
     
     
-    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    <category term="Vulnhub" scheme="https://loveforfight.love/categories/Vulnhub/"/>
     
     
-    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    <category term="渗透测试" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    <category term="提权" scheme="https://loveforfight.love/tags/%E6%8F%90%E6%9D%83/"/>
     
-    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://loveforfight.love/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Os-hackNos-1</title>
+    <link href="https://loveforfight.love/2023/10/21/Os-hackNos-1/"/>
+    <id>https://loveforfight.love/2023/10/21/Os-hackNos-1/</id>
+    <published>2023-10-21T08:20:27.000Z</published>
+    <updated>2023-11-13T14:34:24.274Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Os-hackNos-1&quot;&gt;&lt;a href=&quot;#Os-hackNos-1&quot; class=&quot;headerlink&quot; title=&quot;Os-hackNos-1&quot;&gt;&lt;/a&gt;Os-hackNos-1&lt;/h1&gt;&lt;p&gt;靶机下载 &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Vulnhub" scheme="https://loveforfight.love/categories/Vulnhub/"/>
+    
+    
+    <category term="渗透测试" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    
+    <category term="提权" scheme="https://loveforfight.love/tags/%E6%8F%90%E6%9D%83/"/>
+    
+    <category term="Linux" scheme="https://loveforfight.love/tags/Linux/"/>
     
   </entry>
   
   <entry>
     <title>trollcave-v1-2</title>
-    <link href="https://bilibiliganb.github.io/2023/10/21/trollcave-v1-2/"/>
-    <id>https://bilibiliganb.github.io/2023/10/21/trollcave-v1-2/</id>
+    <link href="https://loveforfight.love/2023/10/21/trollcave-v1-2/"/>
+    <id>https://loveforfight.love/2023/10/21/trollcave-v1-2/</id>
     <published>2023-10-21T08:20:27.000Z</published>
     <updated>2023-11-13T14:34:24.315Z</updated>
     
@@ -196,20 +196,20 @@
       
         
         
-    <summary type="html">&lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;&#92;assets&#92;css&#92;APlayer.min.css&quot;&gt;&lt;script src=&quot;&#92;assets&#92;js&#92;APlayer.min.js&quot;</summary>
+    <summary type="html">&lt;h1 id=&quot;trollcave-v1-2&quot;&gt;&lt;a href=&quot;#trollcave-v1-2&quot; class=&quot;headerlink&quot; title=&quot;trollcave-v1-2&quot;&gt;&lt;/a&gt;trollcave-v1-2&lt;/h1&gt;&lt;p&gt;靶机地址&lt;a</summary>
         
       
     
     
     
-    <category term="Vulnhub" scheme="https://bilibiliganb.github.io/categories/Vulnhub/"/>
+    <category term="Vulnhub" scheme="https://loveforfight.love/categories/Vulnhub/"/>
     
     
-    <category term="渗透测试" scheme="https://bilibiliganb.github.io/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
+    <category term="渗透测试" scheme="https://loveforfight.love/tags/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95/"/>
     
-    <category term="提权" scheme="https://bilibiliganb.github.io/tags/%E6%8F%90%E6%9D%83/"/>
+    <category term="提权" scheme="https://loveforfight.love/tags/%E6%8F%90%E6%9D%83/"/>
     
-    <category term="Linux" scheme="https://bilibiliganb.github.io/tags/Linux/"/>
+    <category term="Linux" scheme="https://loveforfight.love/tags/Linux/"/>
     
   </entry>
   

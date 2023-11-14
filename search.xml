@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Python 一些技巧</title>
+      <link href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
+      <url>/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Python-一些技巧"><a href="#Python-一些技巧" class="headerlink" title="Python 一些技巧"></a>Python 一些技巧</h1><h2 id="打包文件"><a href="#打包文件" class="headerlink" title="打包文件"></a>打包文件</h2><p>用于可以生成不依赖python环境的exe</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#静态打包且无黑框</span><br><span class="line">pyinstaller --onefile --noconsole your_script_name.py</span><br><span class="line"></span><br><span class="line">#静态打包有黑框</span><br><span class="line">pyinstaller --onefile</span><br></pre></td></tr></table></figure><h2 id="生成requirement"><a href="#生成requirement" class="headerlink" title="生成requirement"></a>生成requirement</h2><p>方便别人部署自己编写的项目</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pip install pipreqs</span><br><span class="line">pipreqs . --encoding=utf8 --force</span><br></pre></td></tr></table></figure><h2 id="包管理"><a href="#包管理" class="headerlink" title="包管理"></a>包管理</h2><p>避免多个python组件互相冲突</p><h3 id="安装venv"><a href="#安装venv" class="headerlink" title="安装venv"></a>安装venv</h3><p>linux</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install python3-venv</span><br></pre></td></tr></table></figure><p>windows直接就有</p><h3 id="创建虚拟环境"><a href="#创建虚拟环境" class="headerlink" title="创建虚拟环境"></a>创建虚拟环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -m venv test_env</span><br></pre></td></tr></table></figure><h4 id="linux激活"><a href="#linux激活" class="headerlink" title="linux激活"></a>linux激活</h4><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source ./test_env/bin/activate</span><br></pre></td></tr></table></figure><h4 id="windows激活"><a href="#windows激活" class="headerlink" title="windows激活"></a>windows激活</h4><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.\test_env\Scripts\Activate.ps1</span><br></pre></td></tr></table></figure><p>在虚拟环境下安装包会直接将包放在当前目录，不会对其他环境造成影响</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 开发 </tag>
+            
+            <tag> python </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>后渗透-清理痕迹</title>
       <link href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
       <url>/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/</url>

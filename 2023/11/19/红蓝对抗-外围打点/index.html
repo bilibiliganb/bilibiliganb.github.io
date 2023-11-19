@@ -1,0 +1,239 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>红蓝对抗-外围打点 | Life lover</title><meta name="author" content="bilibiliganb"><meta name="copyright" content="bilibiliganb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="红蓝对抗-外围打点1.简介整理在各类比赛中进行外围打点的思路和工具。 2.信息收集从三个点入手，分别为网络架构、组织架构和泄露信息。 网络架构 域名  互联网搜索引擎、站内搜索、企查查、备案信息+子域名  搜索引擎： google baidu 网络测绘： fofa hunter secxxx.com大佬的工具 企业信息： qcc aiqicha 子域名爆破工具： projectdiscovery&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="红蓝对抗-外围打点">
+<meta property="og:url" content="https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/index.html">
+<meta property="og:site_name" content="Life lover">
+<meta property="og:description" content="红蓝对抗-外围打点1.简介整理在各类比赛中进行外围打点的思路和工具。 2.信息收集从三个点入手，分别为网络架构、组织架构和泄露信息。 网络架构 域名  互联网搜索引擎、站内搜索、企查查、备案信息+子域名  搜索引擎： google baidu 网络测绘： fofa hunter secxxx.com大佬的工具 企业信息： qcc aiqicha 子域名爆破工具： projectdiscovery&amp;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://loveforfight.love/img/360235.jpg">
+<meta property="article:published_time" content="2023-11-19T08:32:27.000Z">
+<meta property="article:modified_time" content="2023-11-19T14:07:54.000Z">
+<meta property="article:author" content="bilibiliganb">
+<meta property="article:tag" content="攻防">
+<meta property="article:tag" content="信息收集">
+<meta property="article:tag" content="资产测绘">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://loveforfight.love/img/360235.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '红蓝对抗-外围打点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-11-19 22:07:54'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Life lover" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 类别</span></a></li><li><a class="site-page child" href="/link/"><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%94%BB%E9%98%B2/"><span> 攻防</span></a></li><li><a class="site-page child" href="/categories/Vulnhub/"><span> Vulnhub</span></a></li><li><a class="site-page child" href="/categories/hack-the-box/"><span> hack-the-box</span></a></li><li><a class="site-page child" href="/categories/vulfocus/"><span> vulfocus</span></a></li><li><a class="site-page child" href="/categories/%E5%B7%A5%E5%85%B7/"><span> 工具</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"><span> 技能学习</span></a></li><li><a class="site-page child" href="/categories/CTF/"><span> CTF</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/360235.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Life lover"><span class="site-name">Life lover</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 类别</span></a></li><li><a class="site-page child" href="/link/"><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E6%94%BB%E9%98%B2/"><span> 攻防</span></a></li><li><a class="site-page child" href="/categories/Vulnhub/"><span> Vulnhub</span></a></li><li><a class="site-page child" href="/categories/hack-the-box/"><span> hack-the-box</span></a></li><li><a class="site-page child" href="/categories/vulfocus/"><span> vulfocus</span></a></li><li><a class="site-page child" href="/categories/%E5%B7%A5%E5%85%B7/"><span> 工具</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"><span> 技能学习</span></a></li><li><a class="site-page child" href="/categories/CTF/"><span> CTF</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">红蓝对抗-外围打点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-11-19T08:32:27.000Z" title="发表于 2023-11-19 16:32:27">2023-11-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-11-19T14:07:54.000Z" title="更新于 2023-11-19 22:07:54">2023-11-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%94%BB%E9%98%B2/">攻防</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="红蓝对抗-外围打点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="红蓝对抗-外围打点"><a href="#红蓝对抗-外围打点" class="headerlink" title="红蓝对抗-外围打点"></a>红蓝对抗-外围打点</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>整理在各类比赛中进行外围打点的思路和工具。</p>
+<h2 id="2-信息收集"><a href="#2-信息收集" class="headerlink" title="2.信息收集"></a>2.信息收集</h2><p>从三个点入手，分别为<strong>网络架构</strong>、<strong>组织架构</strong>和<strong>泄露信息</strong>。</p>
+<h3 id="网络架构"><a href="#网络架构" class="headerlink" title="网络架构"></a>网络架构</h3><ul>
+<li>域名</li>
+</ul>
+<p>互联网搜索引擎、站内搜索、企查查、备案信息+子域名</p>
+<hr>
+<p><strong>搜索引擎</strong>：</p>
+<p>google</p>
+<p>baidu</p>
+<p><strong>网络测绘</strong>：</p>
+<p>fofa</p>
+<p>hunter</p>
+<p><a target="_blank" rel="noopener" href="https://www.secxxx.com/Tool/">secxxx.com大佬的工具</a></p>
+<p><strong>企业信息</strong>：</p>
+<p>qcc</p>
+<p>aiqicha</p>
+<p><strong>子域名爆破工具</strong>：</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/subfinder">projectdiscovery&#x2F;subfinder: Fast passive subdomain enumeration tool. (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/knownsec/ksubdomain">knownsec&#x2F;ksubdomain: 无状态子域名爆破工具 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/shmilylty/OneForAll">shmilylty&#x2F;OneForAll: OneForAll是一款功能强大的子域收集工具 (github.com)</a></p>
+<ul>
+<li>端口</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://github.com/nmap/nmap">nmap&#x2F;nmap: Nmap - the Network Mapper. Github mirror of official SVN repository.</a></p>
+<p>（nmap配合<a target="_blank" rel="noopener" href="https://github.com/scipag/vulscan">scipag&#x2F;vulscan: Advanced vulnerability scanning with Nmap NSE (github.com)</a>可扫漏洞）</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/redtoolskobe/scaninfo">redtoolskobe&#x2F;scaninfo: fast scan for redtools (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/robertdavidgraham/masscan">robertdavidgraham&#x2F;masscan: TCP port scanner, spews SYN packets asynchronously, scanning entire Internet in under 5 minutes. (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/XinRoom/go-portScan">XinRoom&#x2F;go-portScan: High-performance port scanner. 高性能端口扫描器. syn scanner (github.com)</a></p>
+<p>御剑</p>
+<ul>
+<li>旁站</li>
+</ul>
+<p>互联网搜索引擎、fofa指纹搜索</p>
+<ul>
+<li>小程序以及app</li>
+</ul>
+<p>通过微信搜索目标单位，对小程序和app抓包获取</p>
+<ul>
+<li>目录爆破</li>
+</ul>
+<p>dirsearch</p>
+<p><strong>综合信息收集工具</strong></p>
+<p>单URL目标精细收集</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/kracer127/SiteScan">kracer127&#x2F;SiteScan: 专注一站化解决渗透测试的信息收集任务，功能包括域名ip历史解析、nmap常见端口爆破、子域名信息收集、旁站信息收集、whois信息收集、网站架构分析、cms解析、备案信息收集、CDN信息解析、是否存在waf检测、后台寻找以及生成检测结果html报告表。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/xzajyjs/ThunderSearch">xzajyjs&#x2F;ThunderSearch: 【支持Fofa、Shodan、Hunter、Zoomeye、Quake网络空间搜索引擎】闪电搜索器；GUI图形化(Mac&#x2F;Windows)渗透测试信息搜集工具；资产搜集引擎；hw红队工具hvv (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/pingc0y/URLFinder">pingc0y&#x2F;URLFinder: 一款快速、全面、易用的页面信息提取工具，可快速发现和提取页面中的JS、URL和敏感信息。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Ekultek/WhatWaf">Ekultek&#x2F;WhatWaf: Detect and bypass web application firewalls and protection systems (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TideSec/TideFinger">https://github.com/TideSec/TideFinger</a>)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Ekultek/WhatWaf">Ekultek&#x2F;WhatWaf: Detect and bypass web application firewalls and protection systems (github.com)</a></p>
+<p>多目标探测</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/redtoolskobe/scaninfo">redtoolskobe&#x2F;scaninfo: fast scan for redtools (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/EASY233/Finger">EASY233&#x2F;Finger: 一款红队在大量的资产中存活探测与重点攻击系统指纹探测工具 (github.com)</a></p>
+<h3 id="组织架构"><a href="#组织架构" class="headerlink" title="组织架构"></a>组织架构</h3><p>分公司、子公司、供应链、人员信息</p>
+<p>qcc</p>
+<p>chinaz</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/wgpsec/ENScan_GO">wgpsec&#x2F;ENScan_GO: 一款基于各大企业信息API的工具，解决在遇到的各种针对国内企业信息收集难题。一键收集控股公司ICP备案、APP、小程序、微信公众号等信息聚合导出。 (github.com)</a><a target="_blank" rel="noopener" href="https://github.com/laramies/theHarvester">laramies&#x2F;theHarvester: E-mails, subdomains and names Harvester - OSINT (github.com)</a></p>
+<h3 id="泄露信息"><a href="#泄露信息" class="headerlink" title="泄露信息"></a>泄露信息</h3><p>秘钥、手册、拓扑、源码、系统名称、用户名</p>
+<p>百度网盘、阿里云盘</p>
+<p>百度文库、语雀、豆瓣</p>
+<p>github、gitee</p>
+<h2 id="3-扫描工具"><a href="#3-扫描工具" class="headerlink" title="3.扫描工具"></a>3.扫描工具</h2><p><a target="_blank" rel="noopener" href="https://github.com/chushuai/wscan">chushuai&#x2F;wscan: 一款开源的安全评估工具支持常见的 web 安全问题扫描和自定义 POC。此外，该工具还具备机器学习的漏洞检测和自动化测试功能。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/sullo/nikto">sullo&#x2F;nikto: Nikto web server scanner (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/d3ckx1/Fvuln">d3ckx1&#x2F;Fvuln: F-vuln（全称：Find-Vulnerability）是为了自己工作方便专门编写的一款自动化工具，主要适用于日常安全服务、渗透测试人员和RedTeam红队人员，它集合的功能包括：存活IP探测、开放端口探测、web服务探测、web漏洞扫描、smb爆破、ssh爆破、ftp爆破、mssql爆破等其他数据库爆破工作以及大量web漏洞检测模块。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lcvvvv/kscan">lcvvvv&#x2F;kscan: Kscan是一款纯go开发的全方位扫描器，具备端口扫描、协议检测、指纹识别，暴力破解等功能。支持协议1200+，协议指纹10000+，应用指纹20000+，暴力破解协议10余种。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/givemefivw/SecurityServiceBox">givemefivw&#x2F;SecurityServiceBox: 一个既可以满足安服仔日常渗透工作也可以批量刷洞的工具盒子。集合了常见的域名收集、目录扫描、ip扫描、指纹扫描、PoC验证等常用工具，方便安服仔快速展开渗透测试 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/veo/vscan">veo&#x2F;vscan: 开源、轻量、快速、跨平台 的网站漏洞扫描工具，帮助您快速检测网站安全隐患。功能 端口扫描(port scan) 指纹识别(fingerprint) 漏洞检测(nday check) 智能爆破 (admin brute) 敏感文件扫描(file fuzz) (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/hktalent/scan4all">hktalent&#x2F;scan4all: Official repository vuls Scan: 15000+PoCs; 23 kinds of application password crack; 7000+Web fingerprints; 146 protocols and 90000+ rules Port scanning; Fuzz, HW, awesome BugBounty( ͡° ͜ʖ ͡°)… (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/projectdiscovery/nuclei">projectdiscovery&#x2F;nuclei: Fast and customizable vulnerability scanner based on simple YAML based DSL. (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/sairson/Yasso">sairson&#x2F;Yasso: 强大的内网渗透辅助工具集-让Yasso像风一样 支持rdp，ssh，redis，postgres，mongodb，mssql，mysql，winrm等服务爆破，快速的端口扫描，强大的web指纹识别，各种内置服务的一键利用（包括ssh完全交互式登陆，mssql提权，redis一键利用，mysql数据库查询，winrm横向利用，多种服务利用支持socks5代理执行） (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Adminisme/ServerScan">Adminisme&#x2F;ServerScan: ServerScan一款使用Golang开发的高并发网络扫描、服务探测工具。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/chainreactors/gogo">chainreactors&#x2F;gogo: 面向红队的, 高度可控可拓展的自动化引擎 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/chaitin/xray">chaitin&#x2F;xray: 一款完善的安全评估工具，支持常见 web 安全问题扫描和自定义 poc | 使用之前务必先阅读文档 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/0xKayala/NucleiFuzzer">0xKayala&#x2F;NucleiFuzzer: NucleiFuzzer is a Powerful Automation tool for detecting XSS, SQLi, SSRF, Open-Redirect, etc.. Vulnerabilities in Web Applications (github.com)</a></p>
+<h2 id="4-bash脚本进行自动信息收集"><a href="#4-bash脚本进行自动信息收集" class="headerlink" title="4.bash脚本进行自动信息收集"></a>4.bash脚本进行自动信息收集</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#! /bin/bash</span><br><span class="line">amass enum -active -d $1 -brute -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -o amass.txt</span><br><span class="line">  </span><br><span class="line">cat amass.txt | aquatone -ports xlarge -out aqua_$1</span><br><span class="line">  </span><br><span class="line">nuclei -l aqua_$1/aquatone_urls.txt -t ~/nuclei-templates -es info -o nuclei_$1.txt</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="5-综合平台"><a href="#5-综合平台" class="headerlink" title="5.综合平台"></a>5.综合平台</h2><p><a target="_blank" rel="noopener" href="https://github.com/hanc00l/nemo_go">hanc00l&#x2F;nemo_go: Nemo是用来进行自动化信息收集的一个简单平台，通过集成常用的信息收集工具和技术，实现对内网及互联网资产信息的自动收集，提高隐患排查和渗透测试的工作效率。 (github.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/TophantTechnology/ARL">TophantTechnology&#x2F;ARL: ARL(Asset Reconnaissance Lighthouse)资产侦察灯塔系统旨在快速侦察与目标关联的互联网资产，构建基础资产信息库。 协助甲方安全团队或者渗透测试人员有效侦察和检索资产，发现存在的薄弱点和攻击面。 (github.com)</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://loveforfight.love">bilibiliganb</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/">https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://loveforfight.love" target="_blank">Life lover</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%94%BB%E9%98%B2/">攻防</a><a class="post-meta__tags" href="/tags/%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/">信息收集</a><a class="post-meta__tags" href="/tags/%E8%B5%84%E4%BA%A7%E6%B5%8B%E7%BB%98/">资产测绘</a></div><div class="post_share"><div class="social-share" data-image="/img/360235.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/" title="密码相关"><img class="cover" src="/img/360235.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">密码相关</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/" title="后渗透-清理痕迹"><img class="cover" src="/img/1319343.jpeg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-10-26</div><div class="title">后渗透-清理痕迹</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">bilibiliganb</div><div class="author-info__description">Some sec notes</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bilibiliganb"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9"><span class="toc-number">1.</span> <span class="toc-text">红蓝对抗-外围打点</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.2.</span> <span class="toc-text">2.信息收集</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.1.</span> <span class="toc-text">网络架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E7%BB%87%E6%9E%B6%E6%9E%84"><span class="toc-number">1.2.2.</span> <span class="toc-text">组织架构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%84%E9%9C%B2%E4%BF%A1%E6%81%AF"><span class="toc-number">1.2.3.</span> <span class="toc-text">泄露信息</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E6%89%AB%E6%8F%8F%E5%B7%A5%E5%85%B7"><span class="toc-number">1.3.</span> <span class="toc-text">3.扫描工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-bash%E8%84%9A%E6%9C%AC%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%8A%A8%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-number">1.4.</span> <span class="toc-text">4.bash脚本进行自动信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E7%BB%BC%E5%90%88%E5%B9%B3%E5%8F%B0"><span class="toc-number">1.5.</span> <span class="toc-text">5.综合平台</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/" title="红蓝对抗-外围打点"><img src="/img/360235.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红蓝对抗-外围打点"/></a><div class="content"><a class="title" href="/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/" title="红蓝对抗-外围打点">红蓝对抗-外围打点</a><time datetime="2023-11-19T08:32:27.000Z" title="发表于 2023-11-19 16:32:27">2023-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/" title="密码相关"><img src="/img/360235.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码相关"/></a><div class="content"><a class="title" href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/" title="密码相关">密码相关</a><time datetime="2023-11-18T14:45:27.000Z" title="发表于 2023-11-18 22:45:27">2023-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/" title="Python 一些技巧"><img src="/img/833992.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python 一些技巧"/></a><div class="content"><a class="title" href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/" title="Python 一些技巧">Python 一些技巧</a><time datetime="2023-11-14T14:26:27.000Z" title="发表于 2023-11-14 22:26:27">2023-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/" title="后渗透-清理痕迹"><img src="/img/1319343.jpeg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后渗透-清理痕迹"/></a><div class="content"><a class="title" href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/" title="后渗透-清理痕迹">后渗透-清理痕迹</a><time datetime="2023-10-26T12:04:27.000Z" title="发表于 2023-10-26 20:04:27">2023-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/" title="蓝牙工具"><img src="/img/360235.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="蓝牙工具"/></a><div class="content"><a class="title" href="/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/" title="蓝牙工具">蓝牙工具</a><time datetime="2023-10-22T05:04:27.000Z" title="发表于 2023-10-22 13:04:27">2023-10-22</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By bilibiliganb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1824020871" data-server="netease" data-type="song" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

@@ -4,6 +4,35 @@
   
     
     <entry>
+      <title>密码相关</title>
+      <link href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/"/>
+      <url>/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/</url>
+      
+        <content type="html"><![CDATA[<h1 id="密码相关"><a href="#密码相关" class="headerlink" title="密码相关"></a>密码相关</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>在渗透测试过程中会需要构建字典或者破解对应密码，在此收集相关工具</p><h2 id="2-密码字典构建"><a href="#2-密码字典构建" class="headerlink" title="2.密码字典构建"></a>2.密码字典构建</h2><p>密码字典通过公开字典集合进行收集和根据前期信息收集情况进行生成</p><h4 id="公开字典集合"><a href="#公开字典集合" class="headerlink" title="公开字典集合"></a>公开字典集合</h4><ul><li>综合字典</li></ul><p><a href="https://github.com/TheKingOfDuck/fuzzDicts">TheKingOfDuck&#x2F;fuzzDicts: Web Pentesting Fuzz 字典,一个就够了。 (github.com)</a></p><p><a href="https://github.com/insightglacier/Dictionary-Of-Pentesting">insightglacier&#x2F;Dictionary-Of-Pentesting: Dictionary collection project such as Pentesing, Fuzzing, Bruteforce and BugBounty. 渗透测试、SRC漏洞挖掘、爆破、Fuzzing等字典收集项目。 (github.com)</a></p><p><a href="https://github.com/a3vilc0de/PentesterSpecialDict">a3vilc0de&#x2F;PentesterSpecialDict: Dictionary for penetration testers happy hacker (github.com)</a></p><p><a href="https://github.com/danielmiessler/SecLists">danielmiessler&#x2F;SecLists: SecLists is the security tester’s companion. It’s a collection of multiple types of lists used during security assessments, collected in one place. List types include usernames, passwords, URLs, sensitive data patterns, fuzzing payloads, web shells, and many more. (github.com)</a></p><ul><li>密码字典</li></ul><p><a href="https://github.com/ohmybahgosh/RockYou2021.txt">ohmybahgosh&#x2F;RockYou2021.txt: RockYou2021.txt is a MASSIVE WORDLIST compiled of various other wordlists. RockYou2021.txt DOES NOT CONTAIN USER:PASS logins! (github.com)</a></p><p><a href="https://github.com/k8gege/PasswordDic">k8gege&#x2F;PasswordDic: 2011-2019年Top100弱口令密码字典 Top1000密码字典 服务器SSH&#x2F;VPS密码字典 后台管理密码字典 数据库密码字典 子域名字典 (github.com)</a></p><p><a href="https://github.com/rootphantomer/Blasting_dictionary">rootphantomer&#x2F;Blasting_dictionary: 爆破字典 (github.com)</a></p><h4 id="字典生成工具"><a href="#字典生成工具" class="headerlink" title="字典生成工具"></a>字典生成工具</h4><p><a href="https://github.com/LandGrey/pydictor">LandGrey&#x2F;pydictor: A powerful and useful hacker dictionary builder for a brute-force attack (github.com)</a></p><p><a href="https://github.com/zgjx6/SocialEngineeringDictionaryGenerator">zgjx6&#x2F;SocialEngineeringDictionaryGenerator: 社会工程学密码生成器，是一个利用个人信息生成密码的工具 (github.com)</a></p><p><a href="https://github.com/achuna33/weak_password">achuna33&#x2F;weak_password: 可通过姓名、身份证、QQ号、手机号、生日信息、域名、邮箱，生成弱口令字典 (github.com)</a></p><h2 id="3-密码破解"><a href="#3-密码破解" class="headerlink" title="3.密码破解"></a>3.密码破解</h2><p>有时候需要对密码hash进行破解以获取明文</p><p>分布式hashcat</p><p><a href="https://github.com/hashtopolis/server">hashtopolis&#x2F;server： Hashtopolis - 用于分布式密码恢复的 Hashcat 包装器 (github.com)</a></p><p>离线破解+在线接口（非常好用，避免多个网页进行查询MD5）</p><p><a href="https://github.com/L-codes/pwcrack-framework">L-codes&#x2F;pwcrack-framework: Password Crack Framework (github.com)</a></p><p>john</p><p><a href="https://github.com/openwall/john">openwall&#x2F;john: John the Ripper jumbo - advanced offline password cracker, which supports hundreds of hash and cipher types, and runs on many operating systems, CPUs, GPUs, and even some FPGAs (github.com)</a></p><p>hashcat</p><p><a href="https://github.com/hashcat/hashcat">hashcat&#x2F;hashcat: World’s fastest and most advanced password recovery utility (github.com)</a></p><h4 id="常用软件密码破解"><a href="#常用软件密码破解" class="headerlink" title="常用软件密码破解"></a>常用软件密码破解</h4><ul><li>浏览器、QQ等</li></ul><p><a href="https://github.com/moonD4rk/HackBrowserData">moonD4rk&#x2F;HackBrowserData: Decrypt passwords&#x2F;cookies&#x2F;history&#x2F;bookmarks from the browser. 一款可全平台运行的浏览器数据导出解密工具。 (github.com)</a></p><ul><li>xshell</li></ul><p><a href="https://github.com/JDArmy/SharpXDecrypt">JDArmy&#x2F;SharpXDecrypt: Xshell全版本密码恢复工具 (github.com)</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 工具 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 密码 </tag>
+            
+            <tag> 暴力破解 </tag>
+            
+            <tag> 密码喷洒 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Python 一些技巧</title>
       <link href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
       <url>/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</url>

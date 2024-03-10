@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Android脱壳 | Life lover</title><meta name="author" content="bilibiliganb"><meta name="copyright" content="bilibiliganb"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Android脱壳1.简介以frida工具为基础，整理加密的Android应用脱壳技术，以及简单地修复方法。 WEB系统：代码主要运行在后端服务器 安卓APP：客户端和后端服务器均运行代码 故想要对APP客户端进行完整的分析，则需要对其进行脱壳，获得源码。 2.脱壳思路 HOOK删除方法（获得的类最为准确） Dump内存中的类（获得的类较为精准） HOOK ClassLinker 的 Define">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android脱壳">
+<meta property="og:url" content="https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/index.html">
+<meta property="og:site_name" content="Life lover">
+<meta property="og:description" content="Android脱壳1.简介以frida工具为基础，整理加密的Android应用脱壳技术，以及简单地修复方法。 WEB系统：代码主要运行在后端服务器 安卓APP：客户端和后端服务器均运行代码 故想要对APP客户端进行完整的分析，则需要对其进行脱壳，获得源码。 2.脱壳思路 HOOK删除方法（获得的类最为准确） Dump内存中的类（获得的类较为精准） HOOK ClassLinker 的 Define">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://loveforfight.love/img/girl_cloak_hood_984627_1024x768.jpg">
+<meta property="article:published_time" content="2024-03-10T02:47:02.000Z">
+<meta property="article:modified_time" content="2024-03-10T02:48:56.048Z">
+<meta property="article:author" content="bilibiliganb">
+<meta property="article:tag" content="脱壳">
+<meta property="article:tag" content="逆向">
+<meta property="article:tag" content="frida">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://loveforfight.love/img/girl_cloak_hood_984627_1024x768.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Android脱壳',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-03-10 10:48:56'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css"  media="defer" onload="this.media='all'"><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Life lover" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 类别</span></a></li><li><a class="site-page child" href="/link/"><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%AE%89%E5%8D%93/"><span> 安卓</span></a></li><li><a class="site-page child" href="/categories/%E6%94%BB%E9%98%B2/"><span> 攻防</span></a></li><li><a class="site-page child" href="/categories/Vulnhub/"><span> Vulnhub</span></a></li><li><a class="site-page child" href="/categories/hack-the-box/"><span> hack-the-box</span></a></li><li><a class="site-page child" href="/categories/vulfocus/"><span> vulfocus</span></a></li><li><a class="site-page child" href="/categories/%E5%B7%A5%E5%85%B7/"><span> 工具</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"><span> 技能学习</span></a></li><li><a class="site-page child" href="/categories/CTF/"><span> CTF</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/girl_cloak_hood_984627_1024x768.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="Life lover"><span class="site-name">Life lover</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/"><span> 类别</span></a></li><li><a class="site-page child" href="/link/"><span> 友链</span></a></li><li><a class="site-page child" href="/about/"><span> 关于</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 类别</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/categories/%E5%AE%89%E5%8D%93/"><span> 安卓</span></a></li><li><a class="site-page child" href="/categories/%E6%94%BB%E9%98%B2/"><span> 攻防</span></a></li><li><a class="site-page child" href="/categories/Vulnhub/"><span> Vulnhub</span></a></li><li><a class="site-page child" href="/categories/hack-the-box/"><span> hack-the-box</span></a></li><li><a class="site-page child" href="/categories/vulfocus/"><span> vulfocus</span></a></li><li><a class="site-page child" href="/categories/%E5%B7%A5%E5%85%B7/"><span> 工具</span></a></li><li><a class="site-page child" href="/categories/%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0/"><span> 技能学习</span></a></li><li><a class="site-page child" href="/categories/CTF/"><span> CTF</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Android脱壳</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-03-10T02:47:02.000Z" title="发表于 2024-03-10 10:47:02">2024-03-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-10T02:48:56.048Z" title="更新于 2024-03-10 10:48:56">2024-03-10</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AE%89%E5%8D%93/">安卓</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Android脱壳"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Android脱壳"><a href="#Android脱壳" class="headerlink" title="Android脱壳"></a>Android脱壳</h1><h2 id="1-简介"><a href="#1-简介" class="headerlink" title="1.简介"></a>1.简介</h2><p>以frida工具为基础，整理加密的Android应用脱壳技术，以及简单地修复方法。</p>
+<p><strong>WEB系统</strong>：代码主要运行在后端服务器</p>
+<p><strong>安卓APP</strong>：客户端和后端服务器均运行代码</p>
+<p>故想要对APP客户端进行完整的分析，则需要对其进行脱壳，获得源码。</p>
+<h2 id="2-脱壳思路"><a href="#2-脱壳思路" class="headerlink" title="2.脱壳思路"></a>2.脱壳思路</h2><ul>
+<li>HOOK删除方法（获得的类最为准确）</li>
+<li>Dump内存中的类（获得的类较为精准）</li>
+<li>HOOK <code>ClassLinker</code> 的 <code>DefineClass</code> 方法（获得的类包含了非目标app的类）</li>
+</ul>
+<h3 id="2-1HOOK删除方法"><a href="#2-1HOOK删除方法" class="headerlink" title="2.1HOOK删除方法"></a>2.1HOOK删除方法</h3><p>加壳APP运行前会将apk解密运行后删除，故捕获被删除的文件即可获得未加密的apk</p>
+<p>安卓中删除方法有<code>java.io.File</code>的<code>delete</code>方法和native层的<code>unlink</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//delete.js</span></span><br><span class="line"><span class="comment">//HOOK delete方法，不执行删除，仅仅获取被删除文件的路径并打印在日志里</span></span><br><span class="line"><span class="title class_">Java</span>.<span class="title function_">perform</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> f = <span class="title class_">Java</span>.<span class="title function_">use</span>(<span class="string">&quot;java.io.File&quot;</span>);</span><br><span class="line">    f.<span class="property">delete</span>.<span class="property">implementation</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="keyword">var</span> path = <span class="variable language_">this</span>.<span class="title function_">getAbsolutePath</span>();</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[+] Delete catached =&gt; <span class="subst">$&#123;path&#125;</span>`</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">//frida -U  -l ./delete.js -f com.xxx.xxx</span></span><br><span class="line"><span class="comment">//com.xxx.xxx为app包名</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310101102247.png" alt="image-20240310101102247"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//unlink.js</span></span><br><span class="line"><span class="comment">//HOOK native层 unlink方法，使用Interceptor.replace替换unlink方法，不执行删除，仅仅获取被删除文件的路径并打印在日志里</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> unlinkPtr = <span class="title class_">Module</span>.<span class="title function_">findExportByName</span>(<span class="literal">null</span>,<span class="string">&quot;unlink&quot;</span>);</span><br><span class="line"><span class="title class_">Interceptor</span>.<span class="title function_">replace</span>(unlinkPtr,<span class="keyword">new</span> <span class="title class_">NativeCallback</span>(<span class="keyword">function</span>(<span class="params">path</span>)&#123;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[+]unlink:<span class="subst">$&#123;path.readCString()&#125;</span>`</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;,<span class="string">&#x27;int&#x27;</span>,[<span class="string">&#x27;pointer&#x27;</span>]));</span><br><span class="line"></span><br><span class="line"><span class="comment">//frida -U  -l ./unlink.js -f com.xxx.xxx</span></span><br><span class="line"><span class="comment">//com.xxx.xxx为app包名</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310101033577.png" alt="image-20240310101033577"></p>
+<h3 id="2-2Dump内存中的类"><a href="#2-2Dump内存中的类" class="headerlink" title="2.2Dump内存中的类"></a>2.2Dump内存中的类</h3><p>对加载到内存中的类进行捕获。</p>
+<ul>
+<li>自动化工具（<a target="_blank" rel="noopener" href="https://github.com/hluwa/frida-dexdump">hluwa&#x2F;frida-dexdump)</a></li>
+<li>手动dump</li>
+</ul>
+<h4 id="2-2-1自动化工具使用"><a href="#2-2-1自动化工具使用" class="headerlink" title="2.2.1自动化工具使用"></a>2.2.1自动化工具使用</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//前置需要安装frida</span><br><span class="line">//安装方法为	pip3 install frida &amp;&amp; pip3 install frida-tools</span><br><span class="line">pip3 install frida-dexdump</span><br><span class="line">//com.xxx.xxx为目标app包名</span><br><span class="line">frida-dexdump -U -f com.xxx.xxx</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-2-2手动dump"><a href="#2-2-2手动dump" class="headerlink" title="2.2.2手动dump"></a>2.2.2手动dump</h4><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">adb shell</span><br><span class="line">//进入adb shell，使用命令找到运行app的pid，其中<span class="string">&quot;xxx&quot;</span>是指的APP包名</span><br><span class="line"><span class="comment"># ps -A | grep -i &quot;xxx&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310095235660.png" alt="image-20240310095235660"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//根据找到的pid寻找maps中的dex文件</span><br><span class="line"><span class="comment"># cat /proc/&#123;pid&#125;/maps | grep -i &quot;dex&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310101346798.png" alt="image-20240310101346798"></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dump.js</span></span><br><span class="line"><span class="comment">//硬编码对应的地址，不要关闭app，使用frida直接附加上去获取目标apk</span></span><br><span class="line"><span class="comment">//var starAddress = ptr(0x6eb16cb000);</span></span><br><span class="line"><span class="comment">//var endAddress = ptr(0x6eb32da000);</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> starAddress = <span class="title function_">ptr</span>(<span class="number">0x6eb16cb000</span>);</span><br><span class="line"><span class="keyword">var</span> endAddress = <span class="title function_">ptr</span>(<span class="number">0x6eb32da000</span>);</span><br><span class="line"><span class="keyword">var</span> size = endAddress.<span class="title function_">sub</span>(starAddress);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[+] Dumping memory region <span class="subst">$&#123;starAddress&#125;</span> : <span class="subst">$&#123;endAddress&#125;</span>`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> buffer = <span class="title class_">Memory</span>.<span class="title function_">readByteArray</span>(starAddress,<span class="built_in">parseInt</span>(size,<span class="number">16</span>));</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> filePath = <span class="string">&quot;/data/local/tmp/&quot;</span>+starAddress+<span class="string">&quot;_dump.dex&quot;</span>;</span><br><span class="line"><span class="keyword">var</span> fileHande = <span class="keyword">new</span> <span class="title class_">File</span>(filePath,<span class="string">&quot;wb&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(fileHande &amp;&amp; fileHande!=<span class="literal">null</span>)&#123;</span><br><span class="line">    fileHande.<span class="title function_">write</span>(buffer);</span><br><span class="line">    fileHande.<span class="title function_">flush</span>();</span><br><span class="line">    fileHande.<span class="title function_">close</span>();</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`[*] File successfully dumped at <span class="subst">$&#123;filePath&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//frida-ps -Ua  查看目标app进程名</span></span><br><span class="line"><span class="comment">//frida -U  -l ./dump.js 目标app进程名</span></span><br><span class="line"><span class="comment">//此处因为硬编码了地址，重新运行地址会变</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//结果在/data/local/tmp/ 找 _dump.dex结尾的</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-3HOOK-ClassLinker-的-DefineClass-方法"><a href="#2-3HOOK-ClassLinker-的-DefineClass-方法" class="headerlink" title="2.3HOOK ClassLinker 的 DefineClass 方法"></a>2.3HOOK <code>ClassLinker</code> 的 <code>DefineClass</code> 方法</h3><p>使用已有的frida脚本项目对目标进行dump</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git clone  https://github.com/lasting-yang/frida_dump.git</span><br><span class="line">cd frida_dump</span><br><span class="line">frida -U -l dump_dex.js -f com.xxx.xxx</span><br><span class="line">//com.xxx.xxx为目标包名</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310101820442.png" alt="image-20240310101820442"></p>
+<h2 id="3-简单修复"><a href="#3-简单修复" class="headerlink" title="3.简单修复"></a>3.简单修复</h2><p>修复工具-MT管理器</p>
+<h3 id="3-1满足静态分析工具（步骤做完即可用jd或者jadx进行分析）"><a href="#3-1满足静态分析工具（步骤做完即可用jd或者jadx进行分析）" class="headerlink" title="3.1满足静态分析工具（步骤做完即可用jd或者jadx进行分析）"></a>3.1满足静态分析工具（步骤做完即可用jd或者jadx进行分析）</h3><p>对加壳的apk内部的classes.dex进行重命名，并且解压到左边脱壳的部分</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310102348374.png" alt="image-20240310102348374"></p>
+<p>全选所有的dex文件进行dex修复</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310102117343.png" alt="image-20240310102117343"></p>
+<p>批量进行重命名，并将第一个classes1.dex更名为classes.dex，满足正常的dex命名规则</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310102616047.png" alt="image-20240310102616047"></p>
+<p>将命名好的dex文件放回apk内</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310102844877.png" alt="image-20240310102844877"></p>
+<p>将app的dex重新划分</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310103042616.png" alt="image-20240310103042616"></p>
+<h3 id="3-2-去除so层"><a href="#3-2-去除so层" class="headerlink" title="3.2 去除so层"></a>3.2 去除so层</h3><p>此处以数字壳 jiagu 为例（旧版可用，新版不一定行）</p>
+<p>将libjiagu.so 和 libjiagu_x86.so改为libxxxxx.so  libxxxxx_x86.so</p>
+<p>jiagu有五个字母，xxxxx可改为任意字符</p>
+<p>此处用libxxxxx.so</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310103950120.png" alt="image-20240310103950120"></p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310104033222.png" alt="image-20240310104033222"></p>
+<p>将so文件里的所有jiagu都改为xxxxx</p>
+<p><img src="/2024/03/10/Android%E8%84%B1%E5%A3%B3/image-20240310104407472.png" alt="image-20240310104407472"></p>
+<p>如果需要正常运行，还需要考虑签名校验，后续可采用frida hook内部签名校验方法进行绕过。</p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=PLX8_z0EmGw">How to Unpack Protected Android APK with Frida (youtube.com)</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=FeJuxRQUVnU">https://www.youtube.com/watch?v=FeJuxRQUVnU</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/lasting-yang/frida_dump">https://github.com/lasting-yang/frida_dump</a></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://loveforfight.love">bilibiliganb</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/">https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://loveforfight.love" target="_blank">Life lover</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%84%B1%E5%A3%B3/">脱壳</a><a class="post-meta__tags" href="/tags/%E9%80%86%E5%90%91/">逆向</a><a class="post-meta__tags" href="/tags/frida/">frida</a></div><div class="post_share"><div class="social-share" data-image="/img/girl_cloak_hood_984627_1024x768.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/" title="红蓝对抗-外围打点"><img class="cover" src="/img/673458.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">红蓝对抗-外围打点</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">bilibiliganb</div><div class="author-info__description">Some sec notes</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">11</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">18</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/bilibiliganb"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android%E8%84%B1%E5%A3%B3"><span class="toc-number">1.</span> <span class="toc-text">Android脱壳</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-number">1.1.</span> <span class="toc-text">1.简介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E8%84%B1%E5%A3%B3%E6%80%9D%E8%B7%AF"><span class="toc-number">1.2.</span> <span class="toc-text">2.脱壳思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1HOOK%E5%88%A0%E9%99%A4%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.1.</span> <span class="toc-text">2.1HOOK删除方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2Dump%E5%86%85%E5%AD%98%E4%B8%AD%E7%9A%84%E7%B1%BB"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.2Dump内存中的类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-1%E8%87%AA%E5%8A%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">2.2.1自动化工具使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-2%E6%89%8B%E5%8A%A8dump"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">2.2.2手动dump</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3HOOK-ClassLinker-%E7%9A%84-DefineClass-%E6%96%B9%E6%B3%95"><span class="toc-number">1.2.3.</span> <span class="toc-text">2.3HOOK ClassLinker 的 DefineClass 方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%AE%80%E5%8D%95%E4%BF%AE%E5%A4%8D"><span class="toc-number">1.3.</span> <span class="toc-text">3.简单修复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1%E6%BB%A1%E8%B6%B3%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7%EF%BC%88%E6%AD%A5%E9%AA%A4%E5%81%9A%E5%AE%8C%E5%8D%B3%E5%8F%AF%E7%94%A8jd%E6%88%96%E8%80%85jadx%E8%BF%9B%E8%A1%8C%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-number">1.3.1.</span> <span class="toc-text">3.1满足静态分析工具（步骤做完即可用jd或者jadx进行分析）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-%E5%8E%BB%E9%99%A4so%E5%B1%82"><span class="toc-number">1.3.2.</span> <span class="toc-text">3.2 去除so层</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/03/10/Android%E8%84%B1%E5%A3%B3/" title="Android脱壳"><img src="/img/girl_cloak_hood_984627_1024x768.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Android脱壳"/></a><div class="content"><a class="title" href="/2024/03/10/Android%E8%84%B1%E5%A3%B3/" title="Android脱壳">Android脱壳</a><time datetime="2024-03-10T02:47:02.000Z" title="发表于 2024-03-10 10:47:02">2024-03-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/" title="红蓝对抗-外围打点"><img src="/img/673458.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="红蓝对抗-外围打点"/></a><div class="content"><a class="title" href="/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/" title="红蓝对抗-外围打点">红蓝对抗-外围打点</a><time datetime="2023-11-19T08:32:27.000Z" title="发表于 2023-11-19 16:32:27">2023-11-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/" title="密码相关"><img src="/img/girl_gesture_jewelry_966884_1024x768.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="密码相关"/></a><div class="content"><a class="title" href="/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/" title="密码相关">密码相关</a><time datetime="2023-11-18T14:45:27.000Z" title="发表于 2023-11-18 22:45:27">2023-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/" title="Python 一些技巧"><img src="/img/girl_emotion_eyes_1082126_1024x768.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python 一些技巧"/></a><div class="content"><a class="title" href="/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/" title="Python 一些技巧">Python 一些技巧</a><time datetime="2023-11-14T14:26:27.000Z" title="发表于 2023-11-14 22:26:27">2023-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/" title="后渗透-清理痕迹"><img src="/img/girl_cloak_hood_984627_1024x768.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="后渗透-清理痕迹"/></a><div class="content"><a class="title" href="/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/" title="后渗透-清理痕迹">后渗透-清理痕迹</a><time datetime="2023-10-26T12:04:27.000Z" title="发表于 2023-10-26 20:04:27">2023-10-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2024 By bilibiliganb</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><div class="aplayer no-destroy" data-id="1824020871" data-server="netease" data-type="song" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="false" muted></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>

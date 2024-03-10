@@ -6,7 +6,7 @@
   <link href="https://loveforfight.love/atom.xml" rel="self"/>
   
   <link href="https://loveforfight.love/"/>
-  <updated>2023-11-19T14:07:54.000Z</updated>
+  <updated>2024-03-10T02:48:56.048Z</updated>
   <id>https://loveforfight.love/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Android脱壳</title>
+    <link href="https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/"/>
+    <id>https://loveforfight.love/2024/03/10/Android%E8%84%B1%E5%A3%B3/</id>
+    <published>2024-03-10T02:47:02.000Z</published>
+    <updated>2024-03-10T02:48:56.048Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Android脱壳&quot;&gt;&lt;a href=&quot;#Android脱壳&quot; class=&quot;headerlink&quot; title=&quot;Android脱壳&quot;&gt;&lt;/a&gt;Android脱壳&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="安卓" scheme="https://loveforfight.love/categories/%E5%AE%89%E5%8D%93/"/>
+    
+    
+    <category term="脱壳" scheme="https://loveforfight.love/tags/%E8%84%B1%E5%A3%B3/"/>
+    
+    <category term="逆向" scheme="https://loveforfight.love/tags/%E9%80%86%E5%90%91/"/>
+    
+    <category term="frida" scheme="https://loveforfight.love/tags/frida/"/>
+    
+  </entry>
+  
+  <entry>
     <title>红蓝对抗-外围打点</title>
     <link href="https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/"/>
     <id>https://loveforfight.love/2023/11/19/%E7%BA%A2%E8%93%9D%E5%AF%B9%E6%8A%97-%E5%A4%96%E5%9B%B4%E6%89%93%E7%82%B9/</id>
     <published>2023-11-19T08:32:27.000Z</published>
-    <updated>2023-11-19T14:07:54.000Z</updated>
+    <updated>2024-03-10T02:48:56.133Z</updated>
     
     
       
@@ -50,7 +79,7 @@
     <link href="https://loveforfight.love/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/"/>
     <id>https://loveforfight.love/2023/11/18/%E5%AF%86%E7%A0%81%E7%9B%B8%E5%85%B3/</id>
     <published>2023-11-18T14:45:27.000Z</published>
-    <updated>2023-11-18T15:14:20.000Z</updated>
+    <updated>2024-03-10T02:48:56.115Z</updated>
     
     
       
@@ -79,7 +108,7 @@
     <link href="https://loveforfight.love/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/"/>
     <id>https://loveforfight.love/2023/11/14/python%E4%B8%80%E4%BA%9B%E6%8A%80%E5%B7%A7/</id>
     <published>2023-11-14T14:26:27.000Z</published>
-    <updated>2023-11-14T15:41:32.000Z</updated>
+    <updated>2024-03-10T02:48:56.081Z</updated>
     
     
       
@@ -106,7 +135,7 @@
     <link href="https://loveforfight.love/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/"/>
     <id>https://loveforfight.love/2023/10/26/%E5%90%8E%E6%B8%97%E9%80%8F-%E6%B8%85%E7%90%86%E7%97%95%E8%BF%B9/</id>
     <published>2023-10-26T12:04:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.108Z</updated>
     
     
       
@@ -135,7 +164,7 @@
     <link href="https://loveforfight.love/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/"/>
     <id>https://loveforfight.love/2023/10/22/%E8%93%9D%E7%89%99%E5%B7%A5%E5%85%B7/</id>
     <published>2023-10-22T05:04:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.134Z</updated>
     
     
       
@@ -162,7 +191,7 @@
     <link href="https://loveforfight.love/2023/10/21/ReconForce/"/>
     <id>https://loveforfight.love/2023/10/21/ReconForce/</id>
     <published>2023-10-21T08:33:48.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.093Z</updated>
     
     
       
@@ -187,36 +216,11 @@
   </entry>
   
   <entry>
-    <title>Havoc-Windows-Client</title>
-    <link href="https://loveforfight.love/2023/10/21/Havoc-Windows-Client/"/>
-    <id>https://loveforfight.love/2023/10/21/Havoc-Windows-Client/</id>
-    <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;h1 id=&quot;Havoc-win&quot;&gt;&lt;a href=&quot;#Havoc-win&quot; class=&quot;headerlink&quot; title=&quot;Havoc-win&quot;&gt;&lt;/a&gt;Havoc-win&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
-        
-      
-    
-    
-    
-    <category term="工具" scheme="https://loveforfight.love/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="工具开发" scheme="https://loveforfight.love/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Os-ByteSec</title>
     <link href="https://loveforfight.love/2023/10/21/Os-ByteSec/"/>
     <id>https://loveforfight.love/2023/10/21/Os-ByteSec/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.064Z</updated>
     
     
       
@@ -245,7 +249,7 @@
     <link href="https://loveforfight.love/2023/10/21/Os-hackNos-1/"/>
     <id>https://loveforfight.love/2023/10/21/Os-hackNos-1/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.065Z</updated>
     
     
       
@@ -270,11 +274,36 @@
   </entry>
   
   <entry>
+    <title>Havoc-Windows-Client</title>
+    <link href="https://loveforfight.love/2023/10/21/Havoc-Windows-Client/"/>
+    <id>https://loveforfight.love/2023/10/21/Havoc-Windows-Client/</id>
+    <published>2023-10-21T08:20:27.000Z</published>
+    <updated>2024-03-10T02:48:56.061Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Havoc-win&quot;&gt;&lt;a href=&quot;#Havoc-win&quot; class=&quot;headerlink&quot; title=&quot;Havoc-win&quot;&gt;&lt;/a&gt;Havoc-win&lt;/h1&gt;&lt;h2 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="工具" scheme="https://loveforfight.love/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="工具开发" scheme="https://loveforfight.love/tags/%E5%B7%A5%E5%85%B7%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
     <title>trollcave-v1-2</title>
     <link href="https://loveforfight.love/2023/10/21/trollcave-v1-2/"/>
     <id>https://loveforfight.love/2023/10/21/trollcave-v1-2/</id>
     <published>2023-10-21T08:20:27.000Z</published>
-    <updated>2023-11-14T00:05:55.000Z</updated>
+    <updated>2024-03-10T02:48:56.106Z</updated>
     
     
       
